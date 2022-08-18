@@ -85,7 +85,7 @@
             "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}"
           },
           "style": "diamond",
-          "template": "\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.",
+          "template": "{{ if and (.Env.WAKATIME_API_KEY)  (not (.Env.SEGMENT_DISABLE_WAKATIME | toDecimal)) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
           "type": "wakatime"
         },
         {
@@ -102,7 +102,7 @@
             "time_format": "15:04 (01/02)"
           },
           "style": "diamond",
-          "template": "\uF5EF {{ .CurrentDate | date .Format }}",
+          "template": "{{ if not (.Env.SEGMENT_DISABLE_DTIME | toDecimal) }}\uF5EF {{ .CurrentDate | date .Format }}{{ end }}",
           "trailing_diamond": "\uE0B4",
           "type": "time"
         }
@@ -113,6 +113,19 @@
       "alignment": "left",
       "newline": true,
       "segments": [
+        {
+          "background": "p:c-project-python-color",
+          "leading_diamond": "\uE0B6",
+          "foreground": "p:c-badge-text",
+          "properties": {
+            "display_mode": "context",
+            "fetch_virtual_env": true
+          },
+          "style": "diamond",
+          "template": "{{ if not (.Env.SEGMENT_DISABLE_PROJECT_PL | toDecimal) }}\uE235 {{ .Full }} {{ if .Venv }}({{ .Venv }}){{ end }}{{ end }}",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "python"
+        },
         {
           "type": "text",
           "style": "diamond",
@@ -154,6 +167,7 @@
     "c-git-staging-working": "#A7FFEB",
     "c-git-upstream-gone": "#FF9E80",
     "c-git-working": "#84FFFF",
+    "c-project-python-color": "#FFE873",
     "c-secondary-ellipsis": "#FFFF8D",
     "c-wakatime-undertime": "#A7FFEB",
     "c-wakatime-warm-up": "#FFFFB3",
