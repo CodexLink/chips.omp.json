@@ -85,7 +85,7 @@
             "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}"
           },
           "style": "diamond",
-          "template": "\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}. || Integer: {{ .CummulativeTotal.Seconds }} || {{ if gt (.CummulativeTotal.Seconds) 10000 }} X {{ else }} Y {{ end }} ",
+          "template": "\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.",
           "type": "wakatime"
         },
         {
