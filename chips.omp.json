@@ -91,8 +91,8 @@
         {
           "background_templates": [
             "{{ if regexMatch \"(^(0[6-9])|(1[0-1])):\" (.CurrentDate | date .Format) }}p:c-date-time-morning{{ end }}",
-            "{{ if contains \"12:\" (.CurrentDate | date .Format) }}p:c-date-time-noon{{ end }}",
-            "{{ if regexMatch (\"(^1[3-7]):\") (.CurrentDate | date .Format) }}p:c-date-time-afternoon{{ end }}",
+            "{{ if regexMatch (\"(^1[2-4]):\") (.CurrentDate | date .Format) }}p:c-date-time-noon{{ end }}",
+            "{{ if regexMatch (\"(^1[5-7]):\") (.CurrentDate | date .Format) }}p:c-date-time-afternoon{{ end }}",
             "{{ if regexMatch \"(^(1[8-9])|(2[0-3])):\" (.CurrentDate | date .Format) }}p:c-date-time-evening{{ end }}",
             "{{ if regexMatch \"^(0[0-5]):\" (.CurrentDate | date .Format) }}p:c-date-time-night{{ end }}"
           ],
