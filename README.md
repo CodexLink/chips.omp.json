@@ -1,6 +1,6 @@
 # chips.omp.json
 
-A Non-Standard Oh-My-Posh Theme Based on Material Design Component: Chips.
+A Oh-My-Posh Theme Based on Material Design Component: Chips.
 
 ## Features
 
@@ -23,6 +23,10 @@ A Non-Standard Oh-My-Posh Theme Based on Material Design Component: Chips.
 - ??? (What else)
 
 ## Contribution
+
+- TODO.
+
+## FAQ
 
 - TODO.
 
