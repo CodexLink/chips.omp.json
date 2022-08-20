@@ -1,2 +1,31 @@
-# .omp.json
-A no name theme for the Oh My Posh Theme
+# chips.omp.json
+
+A Non-Standard Oh-My-Posh Theme Based on Material Design Component: Chips.
+
+## Features
+
+- Backtracking Transient Prompt for Previous Recent Execution Time and Command Return Code
+- Color-Adjustable with Palettes (Reduces Clutter for Modifying Theme)
+- Color-Changing Segments Based on Activity (Conditions)
+- Color Candidates uses Material Palette Color from A100 to A400.
+- Hideable (Primary Top and Secondary Left Candidate) Segments
+- Minimalized Console Title
+- Segments Individualized as a Seperate Component
+
+## Demo
+
+- TODO
+
+## TODOs
+
+- SSH Session Detection.
+- Other Programming Language Detection (_aside from Python_)
+- ??? (What else)
+
+## Contribution
+
+- TODO.
+
+## Tools Used
+
+- [regular expressions 101](https://regex101.com/) - Just a regex validator.
