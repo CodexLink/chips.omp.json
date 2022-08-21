@@ -122,7 +122,7 @@
             "fetch_virtual_env": true
           },
           "style": "diamond",
-          "template": "{{ if .Env.SEGMENT_DISABLE_PROJECT_PL }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_DISABLE_PROJECT_PL) }}\uE235 {{ .Full }} {{ if .Venv }}\uE621 {{ .Venv }}{{ end }}{{ end }}{{ end }}",
+          "template": "{{ if .Env.SEGMENT_DISABLE_PROJECT_PL }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_DISABLE_PROJECT_PL) }}\uE235 {{ .Full }} {{ if .Venv }}{{ if .Env.SEGMENT_PROJECT_PL_DISABLE_VENV }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_PROJECT_PL_DISABLE_VENV) }}\uE621 {{ if .Env.SEGMENT_PROJECT_PL_VENV_STR }}{{ .Env.SEGMENT_PROJECT_PL_VENV_STR }}{{ else }}{{ .Venv }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "python"
         },
