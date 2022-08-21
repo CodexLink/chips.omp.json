@@ -26,6 +26,8 @@ A Oh-My-Posh Theme Based on Material Design Component: Chips.
 
 - TODO.
 
+## Technicals
+
 ## FAQ
 
 - TODO.
