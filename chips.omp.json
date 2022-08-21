@@ -33,8 +33,8 @@
           "template": "{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uE0B1 \uF448 ({{ .Working.String }}){{ end }}{{ if and .Working.Changed .Staging.Changed }} \uE621 {{ end }}{{ if .Staging.Changed }}{{ if not .Working.Changed }} \uE0B1 {{ end }}\uF854 ({{ .Staging.String }}){{ end }}{{ if .StashCount }} \uE621 \uF6FC {{ .StashCount }} Stash{{ if gt .StashCount 1 }}es{{ end }}{{ end }}",
           "properties": {
             "branch_icon": "\uE0A0 ",
-            "branch_ahead_icon": "(\uFA9B)",
-            "branch_behind_icon": "(\uF9AA)",
+            "branch_ahead_icon": "(\uF9AC)",
+            "branch_behind_icon": "(\uF9AD)",
             "branch_gone_icon": "(\uF00D)",
             "branch_identical_icon": "(\uF00C)",
             "fetch_status": true,
