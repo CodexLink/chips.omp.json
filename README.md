@@ -2,7 +2,7 @@
 
 A Oh-My-Posh Theme Based on Material Design Component: Chips.
 
-[![chips.omp.json highlight](https://ohmyposh.dev/docs/themes#chips)](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight.png)
+[![chips.omp.json highlight](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight.png)](https://ohmyposh.dev/docs/themes#chips)
 
 ## Features
 
