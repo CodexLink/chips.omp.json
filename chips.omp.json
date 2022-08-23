@@ -79,8 +79,6 @@
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
           "properties": {
-            "cache_timeout": 5,
-            "http_timeout": 10000,
             "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}"
           },
           "style": "diamond",
