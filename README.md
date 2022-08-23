@@ -1,12 +1,8 @@
 # chips.omp.json
 
-The development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips.
+The development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips. This repository contains the cutting edge for the theme than the provided theme from the oh-my-posh repository. Weekly changes were reflected.
 
 [![chips.omp.json highlight](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight.png)](https://ohmyposh.dev/docs/themes#chips)
-
-<hr/>
-
-**NOTE**: The theme is ready for deployment on the oh-my-posh theme directory, however, I wanna investigate its slow execution time. I suspect this may be from the transient using the cached data from the execution time, but who knows. When a solution was found, some features may be cut off.
 
 ## Features
 
