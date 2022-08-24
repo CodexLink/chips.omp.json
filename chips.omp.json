@@ -79,10 +79,12 @@
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
           "properties": {
-            "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}"
+            "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}",
+            "http_timeout": 2000,
+            "cache_timeout": 5
           },
           "style": "diamond",
-          "template": "{{ if and (.Env.WAKATIME_API_KEY) (.Env.SEGMENT_DISABLE_WAKATIME) }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_DISABLE_WAKATIME) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}{{ end }}",
+          "template": "{{ if .Env.WAKATIME_API_KEY }}{{ if .Env.SEGMENT_DISABLE_WAKATIME }}{{ if regexMatch \"^[Tt](rue)$\" (title .Env.SEGMENT_DISABLE_WAKATIME) }}{{ end }}{{ end }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "wakatime"
         },
