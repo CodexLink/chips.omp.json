@@ -84,7 +84,7 @@
             "cache_timeout": 5
           },
           "style": "diamond",
-          "template": "{{ if .Env.WAKATIME_API_KEY }}{{ if .Env.SEGMENT_DISABLE_WAKATIME }}{{ if regexMatch \"^[Tt](rue)$\" (title .Env.SEGMENT_DISABLE_WAKATIME) }}{{ end }}{{ end }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
+          "template": "{{ if .Env.WAKATIME_API_KEY }}{{ if .Env.SEGMENT_DISABLE_WAKATIME }}{{ if regexMatch \"^[Tt](rue)$\" (title .Env.SEGMENT_DISABLE_WAKATIME) }}{{ else }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "wakatime"
         },
