@@ -112,7 +112,25 @@
       "newline": true,
       "segments": [
         {
-          "background": "p:c-project-python-color",
+          "template": "{{ if false }}{{ end }}",
+          "type": "session",
+          "style": "diamond"
+        },
+        {
+          "background_templates": [
+            "{{ if and (.Segments.Session.SSHSession) (not .Root)  }}p:c-shell-state-ssh-active{{ end }}",
+            "{{ if and (not .Segments.Session.SSHSession) (.Root)  }}p:c-shell-state-root-active{{ end }}",
+            "{{ if and (.Segments.Session.SSHSession) (.Root) }}p:c-shell-state-root-ssh-active{{ end }}"
+          ],
+          "foreground": "p:c-badge-text",
+          "leading_diamond": "\uE0B6",
+          "style": "diamond",
+          "template": "{{ if or (.Segments.Session.SSHSession) (.Root) }}{{ if .Segments.Session.SSHSession }}\uE7A2 SSH{{ end }}{{ if and (.Segments.Session.SSHSession) (.Root) }} \uE621 {{ end }}{{ if .Root }}# Root{{ end }}{{ end }}",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "text"
+        },
+        {
+          "background": "p:c-project-python",
           "leading_diamond": "\uE0B6",
           "foreground": "p:c-badge-text",
           "properties": {
@@ -125,15 +143,16 @@
           "type": "python"
         },
         {
-          "style": "diamond",
-          "template": "{{if .Root }}<p:c-badge-return-success,p:c-badge-text>\uE0B6</><p:c-badge-text,p:c-badge-return-success>#</><p:c-badge-return-success,>\uE0B4</> {{ end }}<p:c-badge-white>\u276F</>",
+          "style": "plain",
+          "foreground": "p:c-badge-white",
+          "template": "\u276F",
           "type": "text"
         }
       ],
       "type": "prompt"
     }
   ],
-  "console_title_template": "{{ if .Root }}# (as {{ .UserName }}) | {{ end }}{{ if .WSL }}WSL | {{ end }}{{ .Folder }} ({{ .Shell }})",
+  "console_title_template": "{{ if .Segments.Session.SSHSession }}SSH'd{{ if or .Root }} & {{ end }}{{ end }}{{ if .Root }}# (as {{ .UserName }}) | {{ end }}{{ if .WSL }}WSL | {{ end }}{{ .Folder }} ({{ .Shell }})",
   "final_space": true,
   "palette": {
     "c-badge-folder": "#FFD770",
@@ -142,6 +161,7 @@
     "c-badge-return-custom": "#E7B9FF",
     "c-badge-return-fail-term": "#FF8A80",
     "c-badge-return-success": "#B2FF59",
+
     "c-date-time-morning": "#FFFF8D",
     "c-date-time-noon": "#FFF64F",
     "c-date-time-afternoon": "#FFC400",
@@ -160,8 +180,11 @@
     "c-git-staging-working": "#A7FFEB",
     "c-git-upstream-gone": "#FF9E80",
     "c-git-working": "#84FFFF",
-    "c-project-python-color": "#FFE873",
+    "c-project-python": "#FFE873",
     "c-secondary-ellipsis": "#FFFF8D",
+    "c-shell-state-ssh-active": "#BAFFFF",
+    "c-shell-state-root-active": "#9FFFE0",
+    "c-shell-state-root-ssh-active": "#FFB2FF",
     "c-wakatime-undertime": "#A7FFEB",
     "c-wakatime-warm-up": "#FFFFB3",
     "c-wakatime-working": "#FFD180",
