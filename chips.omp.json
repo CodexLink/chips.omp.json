@@ -22,10 +22,10 @@
             "{{ if gt .Ahead 0 }}p:c-git-ahead{{ end }}",
             "{{ if gt .Behind 0 }}p:c-git-behind{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:c-git-ahead-behind{{ end }}",
-            "{{ if and (not .Working.Changed) (.Staging.Changed)}}p:c-git-staging{{ end }}",
+            "{{ if and (not .Working.Changed) (.Staging.Changed) }}p:c-git-staging{{ end }}",
             "{{ if and (.Working.Changed) (.Staging.Changed) }}p:c-git-staging-working{{ end }}",
             "{{ if .UpstreamGone }}p:c-git-upstream-gone{{ end }}",
-            "{{ if and (.Working.Changed) (not .Staging.Changed)}}p:c-git-working{{ end }}"
+            "{{ if and (.Working.Changed) (not .Staging.Changed) }}p:c-git-working{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": " \uE0B6",
@@ -84,7 +84,7 @@
             "cache_timeout": 5
           },
           "style": "diamond",
-          "template": "{{ if .Env.WAKATIME_API_KEY }}{{ if .Env.SEGMENT_DISABLE_WAKATIME }}{{ if regexMatch \"^[Tt](rue)$\" (title .Env.SEGMENT_DISABLE_WAKATIME) }}{{ else }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}{{ end }}{{ end }}",
+          "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_WAKATIME))) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "wakatime"
         },
@@ -102,7 +102,7 @@
             "time_format": "15:04 (01/02)"
           },
           "style": "diamond",
-          "template": "{{ if .Env.SEGMENT_DISABLE_DTIME }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_DISABLE_DTIME) }}\uF5EF {{ .CurrentDate | date .Format }}{{ end }}{{ end }}",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_DTIME)) }}\uF5EF {{ .CurrentDate | date .Format }}{{ end }}",
           "trailing_diamond": "\uE0B4",
           "type": "time"
         },
@@ -119,7 +119,7 @@
           "foreground": "p:c-badge-text",
           "leading_diamond": " \uE0B6",
           "style": "diamond",
-          "template": "{{ if regexMatch \"^[Tt](rue)$\" (title (default \"False\" .Env.SEGMENT_DISABLE_BATTERY)) }}{{ else }}{{ if not .Error }}{{ if eq \"Charging\" .State.String }}\uE315 {{ else if eq \"Discharging\" .State.String }}\uF062 {{ else if eq \"Full\" .State.String }}~ {{ else }}? {{ end }}{{ if lt .Percentage 15 }}\uF579{{ else if and (gt .Percentage 16) (lt .Percentage 30) }}\uF57A{{ else if and (gt .Percentage 31) (lt .Percentage 45) }}\uF57C{{ else if and (gt .Percentage 46) (lt .Percentage 55)}}\uF57D{{ else if and (gt .Percentage 56) (lt .Percentage 70) }}\uF57E{{ else if and (gt .Percentage 71) (lt .Percentage 90) }}\uF580{{ else }}\uF581{{ end }} {{ .Percentage }}%{{ else }}!{{ end }}{{ end }}",
+          "template": "{{ if eq \"True\" (title (default \"False\" .Env.SEGMENT_DISABLE_BATTERY)) }}{{ else }}{{ if not .Error }}{{ if eq \"Charging\" .State.String }}\uE315 {{ else if eq \"Discharging\" .State.String }}\uF062 {{ else if eq \"Full\" .State.String }}~ {{ else }}? {{ end }}{{ if lt .Percentage 15 }}\uF579{{ else if and (gt .Percentage 16) (lt .Percentage 30) }}\uF57A{{ else if and (gt .Percentage 31) (lt .Percentage 45) }}\uF57C{{ else if and (gt .Percentage 46) (lt .Percentage 55)}}\uF57D{{ else if and (gt .Percentage 56) (lt .Percentage 70) }}\uF57E{{ else if and (gt .Percentage 71) (lt .Percentage 90) }}\uF580{{ else }}\uF581{{ end }} {{ .Percentage }}%{{ else }}!{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4",
           "type": "battery"
         }
@@ -137,8 +137,8 @@
         },
         {
           "background_templates": [
-            "{{ if and (.Segments.Session.SSHSession) (not .Root)  }}p:c-shell-state-ssh-active{{ end }}",
-            "{{ if and (not .Segments.Session.SSHSession) (.Root)  }}p:c-shell-state-root-active{{ end }}",
+            "{{ if and (.Segments.Session.SSHSession) (not .Root) }}p:c-shell-state-ssh-active{{ end }}",
+            "{{ if and (not .Segments.Session.SSHSession) (.Root) }}p:c-shell-state-root-active{{ end }}",
             "{{ if and (.Segments.Session.SSHSession) (.Root) }}p:c-shell-state-root-ssh-active{{ end }}"
           ],
           "foreground": "p:c-badge-text",
@@ -157,7 +157,7 @@
             "fetch_virtual_env": true
           },
           "style": "diamond",
-          "template": "{{ if .Env.SEGMENT_DISABLE_PROJECT_PL }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_DISABLE_PROJECT_PL) }}\uE235 {{ .Full }} {{ if .Venv }}{{ if .Env.SEGMENT_PROJECT_PL_DISABLE_VENV }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_PROJECT_PL_DISABLE_VENV) }}\uE621 {{ if .Env.SEGMENT_PROJECT_PL_VENV_STR }}{{ .Env.SEGMENT_PROJECT_PL_VENV_STR }}{{ else }}{{ .Venv }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}",
+          "template": "{{ if and (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_PROJECT_PYTHON))) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_PROJECT_PYTHON_VENV))) }} \uE235 {{ if eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_PROJECT_PYTHON)) }}{{ .Full }}{{ end }}{{ if and (.Venv) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_PROJECT_PYTHON))) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_PROJECT_PYTHON_VENV))) }} \uE621 {{ end }}{{ if and (.Venv) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_PROJECT_PYTHON_VENV))) }}{{ if .Env.SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR }}{{ .Env.SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR }}{{ else }}{{ .Venv }}{{ end }}{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "python"
         },
@@ -217,7 +217,7 @@
     "c-wakatime-overtime": "#FF8A80"
   },
   "transient_prompt": {
-    "template": "<{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}>\uE0B6</><p:c-badge-text,{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}>\uF55D \uE0B1 {{ if .Segments.Executiontime.Ms }}{{ if .Env.SEGMENT_DISABLE_TRANSIENT_RECENT_EXEC_TIME }}{{ if regexMatch \"^[Ff](alse)$\" (title .Env.SEGMENT_DISABLE_TRANSIENT_RECENT_EXEC_TIME) }}\uFA1E {{ .Segments.Executiontime.FormattedMs }} \uE621 {{ end }}{{ end }}{{ end }}<b>{{ if eq .Code 0 }}OK{{ else if eq .Code 1 }}FAIL{{ else if eq .Code 130 }}TERM{{ else }}Code{{ end }} ({{ .Code }})</b></><{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}>\uE0B4</> \u276F "
+    "template": "<{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}>\uE0B6</><p:c-badge-text,{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}>\uF55D \uE0B1 {{ if .Segments.Executiontime.Ms }}{{ if .Env.SEGMENT_DISABLE_TRANSIENT_RECENT_EXEC_TIME }}{{ if eq \"False\" (title .Env.SEGMENT_DISABLE_TRANSIENT_RECENT_EXEC_TIME) }}\uFA1E {{ .Segments.Executiontime.FormattedMs }} \uE621 {{ end }}{{ end }}{{ end }}<b>{{ if eq .Code 0 }}OK{{ else if eq .Code 1 }}FAIL{{ else if eq .Code 130 }}TERM{{ else }}Code{{ end }} ({{ .Code }})</b></><{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}>\uE0B4</> \u276F "
   },
   "secondary_prompt": {
     "background": "transparent",
