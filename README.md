@@ -84,7 +84,7 @@ The following contains information on how I was able to manipulate the theme to 
 
 3. Why `transient prompt` contains one-liner that contains multiple segments?
 
-   > Accoding to the docs and as per explanation provided by the creator from my Issue, 'transient prompt` use case is intended to be more simplier than the other prompt because its nature was to provide a clean output from other prompts. With its feature limitation, I want to do more than just that, by providing previous and current insights about the command, I was able to create or manifest the structure of the segment to be more the same as how I display other segment from other prompt.
+   > Accoding to the docs and as per explanation provided by the creator from my [issue](https://github.com/JanDeDobbeleer/oh-my-posh/issues/2605), 'transient prompt` use case is intended to be more simplier than the other prompt because its nature was to provide a clean output from other prompts. With its feature limitation, I want to do more than just that, by providing previous and current insights about the command, I was able to create or manifest the structure of the segment to be more the same as how I display other segment from other prompt.
 
 4. Sometimes my prompt just hangs. Why?
 
@@ -98,8 +98,12 @@ The following contains information on how I was able to manipulate the theme to 
 
    > Initial development of theme were not reflected due to the fact that I was having a hard time creating a small script to transport changes from local (home) to remote (cloned repo). Also, as per its state being set to `public`, it was done when I was reporting an [issue in oh-my-posh repository](https://github.com/JanDeDobbeleer/oh-my-posh/issues/2679), wherein theme is required for evaluation of the said report.
 
-7. When I disabled "wakatime", why it still feels so slow?
+7. When I disabled "wakatime" segment, why it still feels so slow?
+
    > As of now (08/26/2022), there is no switch for the HTTP query to be disabled when a certain environment variable invalidates truthy condition. I suggest trying to nullify the value of your 'WAKATIME_API_KEY' and see if it works or ignores calling HTTP request.
+
+8. What are your basis for the wakatime's timeout values?
+   > They were based on my preference with consideration on my ISP speed.
 
 ## Tools Used
 
