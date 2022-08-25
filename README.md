@@ -1,19 +1,26 @@
 # chips.omp.json
 
-The development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips. This repository contains the cutting edge for the theme than the provided theme from the oh-my-posh repository. Weekly changes were reflected.
+The development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips. This repository contains the cutting edge version of the theme than the one provided from the oh-my-posh repository. Updates of the theme from this repository to the oh-my-posh repository will reflect on the weekly basis.
+
+# Notice
+
+Theme is finished! As of `1.3.4`, all neccessary changes were done. Thorough examination or careful evaluation of output with respect to the environment variable will be done for this week, with PR to the official oh-my-posh repository will be instantiated.
 
 [![chips.omp.json highlight #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_1.png)](https://ohmyposh.dev/docs/themes#chips)
-[![chips.omp.json highlight #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_2.png)](https://ohmyposh.dev/docs/themes#chips)
 
 ## Features
 
 - Backtracking Transient Prompt for Previous Recent Execution Time and Command Return Code
 - Color-Adjustable with Palettes (Reduces Clutter for Modifying Theme)
 - Color-Changing Segments Based on Activity (Conditions)
-- Color Candidates uses Material Palette Color from A100 to A400.
+- Color Candidates uses Material Palette Color from A100 to A400
 - Hideable (Primary Top and Secondary Left Candidate) Segments
 - Minimalized Console Title
 - Segments Individualized as a Seperate Component
+
+## Installation
+
+- TODO.
 
 ## Screenshots
 
@@ -27,21 +34,15 @@ The following screenshots may be differ due to some of the segments hiding featu
 
 ###
 
-## Installation
-
 ## Leftout Features
 
 The following are some of the features that I cut off **_for now_**, due to me, not using it, or has no other ways for me to test it.
 
-1. SSH Session to Segment
-   - I don't know what part or side of prompt where it can be appreciated. Sure, I can put it on right-side 2nd primary prompt, but not sure yet, let me know your thoughts on **Issue**.
-2. Other Programming Language Project Segment
-   - SSH Session to Segment is possible but I have two reasons on why I cannot implement them:
-     - a. I don't know how to test this yet.
-     - b. I can probably SSH to my phone but glyphs will probably be broken.
+1. Other Programming Language Project Segment
 
-- Programming languages that I have is currently **Python** and I'm currently planning to add Rust and Flutter in the future. let me know what other programming languages I can include by issuing them in **Issue**.
-  > Note that, you have to make sure that language is supported from one of the segments offered in **oh-my-posh Segment Section**. Otherwise, create a feature request.
+   - Programming languages that I have is currently **Python** and I'm currently planning to add Rust and Flutter in the future. let me know what other programming languages I can include by issuing them in **Issue**.
+
+     > Note that, you have to make sure that language is supported from one of the segments offered in **oh-my-posh Segment Section**. Otherwise, create a feature request.
 
 ## Technicals
 
@@ -49,19 +50,23 @@ The following contains information on how I was able to manipulate the theme to 
 
 ### Dealing with the Environment Variables, both Empty and Empty or Invalid Value
 
+- TODO.
+
 ### Dealing with the Limitation of Transient Prompt
+
+- TODO.
 
 ### Adding Segment on One Segment without Duplication
 
+- TODO.
+
 ### `toBool` in sprig doesn't exists. Now what?
+
+- TODO.
 
 ### Solution to Leading and Trailing Diamonds being treated as Text on Templates
 
-## TODO
-
-Some thing I would want to do to finish the initial production of this theme repository.
-
-- [ ] PR request for including to the bundle.
+- TODO.
 
 ## Contribution
 
@@ -86,8 +91,20 @@ Some thing I would want to do to finish the initial production of this theme rep
    > If you are using Wakatime, you have to keep note that the cache time is set to `10m` or 10 minutes by default. Therefore, every 10 minutes the prompt will do an HTTP request to get the latest upstream of your stats. If you are not using Wakatime and this issue occurs, please investigate the state of the prompt by **debugging** it. Please let me know with sufficient information if it persists.
 
 5. Why did you not use `posh-git`? You know that `git` segment is slower right?
+
    > I'm aware. oh-my-posh `posh-git` docs doesn't show any examples or further modification than what is being provided in the `git` segment. While I do understand the compromise of performance over customization, I think its best to customize the output to further understand more about what are the symbols behind them. Because in my perspective, I'm pretty much confused about it. To solve the contention from this issue, I'm hoping that `posh-git` is customizable as `git` segment.
+
+6. Why start at `1.0.0`?
+
+   > Initial development of theme were not reflected due to the fact that I was having a hard time creating a small script to transport changes from local (home) to remote (cloned repo). Also, as per its state being set to `public`, it was done when I was reporting an [issue in oh-my-posh repository](https://github.com/JanDeDobbeleer/oh-my-posh/issues/2679), wherein theme is required for evaluation of the said report.
+
+7. When I disabled "wakatime", why it still feels so slow?
+   > As of now (08/26/2022), there is no switch for the HTTP query to be disabled when a certain environment variable invalidates truthy condition. I suggest trying to nullify the value of your 'WAKATIME_API_KEY' and see if it works or ignores calling HTTP request.
 
 ## Tools Used
 
 - [regular expressions 101](https://regex101.com/) — Just a regex validator.
+
+## Credits
+
+- TODO.
