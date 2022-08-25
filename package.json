@@ -1,11 +1,11 @@
 {
   "name": "chips.omp.json",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Non-Standard Compliant Material Design-Inspired Chips Theme for Oh-My-Posh Theme.",
   "scripts": {
-    "copy-local": "pwsh -Command cp ~/chips.omp.json ./ -Confirm",
-    "copy-git": "pwsh -Command cp chips.omp.json ~/ -Confirm",
-    "snapshot": "pwsh -Command oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config chips.omp.json --cursor-padding 50 --rprompt-offset 30 --output assets\\highlight.png"
+    "copy-local": "pwsh -NoProfile -Command Copy-Item -Destination \"./\" -Path \"~/chips.omp.json\" -Confirm",
+    "copy-git": "pwsh -NoProfile -Command Copy-Item -Destination \"~/\" -Path \"chips.omp.json\"  -Confirm",
+    "snapshot": "oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config chips.omp.json --cursor-padding 50 --rprompt-offset 30 --output assets\\highlight.png"
   },
   "repository": {
     "type": "git",
