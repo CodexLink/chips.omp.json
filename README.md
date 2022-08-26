@@ -1,38 +1,46 @@
 # chips.omp.json
 
-The development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips. This repository contains the cutting edge version of the theme than the one provided from the oh-my-posh repository. Updates of the theme from this repository to the oh-my-posh repository will reflect on the weekly basis.
+The `passively-active, with cutting edge release` development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips.
 
 # Notice
 
-Theme is finished! As of `1.3.4`, all neccessary changes were done. Thorough examination or careful evaluation of output with respect to the environment variable will be done for this week, with PR to the official oh-my-posh repository will be instantiated.
+Theme is finished! Documentation is the only thing lef before proceeding with PR to the official oh-my-posh repository for publishing.
 
 [![chips.omp.json highlight #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_1.png)](https://ohmyposh.dev/docs/themes#chips)
 
 ## Features
 
 - Backtracking Transient Prompt for Previous Recent Execution Time and Command Return Code
-- Color-Adjustable with Palettes (Reduces Clutter for Modifying Theme)
-- Color-Changing Segments Based on Activity (Conditions)
-- Color Candidates uses Material Palette Color from A100 to A400
-- Hideable (Primary Top and Secondary Left Candidate) Segments
+- Color-Adjustable with Palettes
+- Color-Changing Segments Based on Activity Context Conditions
+- Color Candidates for Segments uses the Material Palette Color from A100 to A400
+- Explicitly-Optional-able (Primary Top and Secondary Left Candidates Only) Segments
 - Minimalized Console Title
-- Segments Individualized as a Seperate Component
+- Respects Input Buffer by Carefully Placing Segments on Non-Invasive Seciton
+- Segments Individualized as a Seperate Component (_some segments were coded as a whole_)
 
 ## Installation
 
-- TODO.
+1. Click on the [theme file](https://github.com/CodexLink/chips.omp.json/blob/latest/chips.omp.json) in this repository, then right-click the **Raw** button and save it as `chips.omp.json` to your designated directory (_by default it should be at your home directory_).
+2. On your powershell profile (`$PROFILE`), invoke the theme to the oh-my-posh arguments.
+   > `oh-my-posh --config ~/chips.omp.json --init --shell pwsh | Invoke-Expression`
+3. Restart your prompt or Refresh your prompt by running the following command: `. $PROFILE` and you are good to go!
 
-## Screenshots
+## Showcase
+
+- TODO.
 
 ### More General Prompt Display
 
-The following screenshots may be differ due to some of the segments hiding feature. Please refer to Technicals for more information.
+- TODO.
 
 ### Backtracked Insights from Previous Commands
 
+- TODO.
+
 ### Color-Adjusting Segments
 
-###
+- TODO.
 
 ## Leftout Features
 
@@ -40,9 +48,9 @@ The following are some of the features that I cut off **_for now_**, due to me, 
 
 1. Other Programming Language Project Segment
 
-   - Programming languages that I have is currently **Python** and I'm currently planning to add Rust and Flutter in the future. let me know what other programming languages I can include by issuing them in **Issue**.
+   - Programming languages that I have is currently **Python** and I'm currently planning to add **Rust** and **Flutter** in the future. let me know what other programming languages I can include by issuing them in **Issue**.
 
-     > Note that, you have to make sure that language is supported from one of the segments offered in **oh-my-posh Segment Section**. Otherwise, create a feature request.
+     > Note that, you have to make sure that language is supported from one of the segments offered in **oh-my-posh Segment Section**. Otherwise, create a feature request on them.
 
 ## Technicals
 
@@ -78,7 +86,7 @@ The following contains information on how I was able to manipulate the theme to 
 
    > Preferences. Most themes IMO are somewhat clusterred, which provides no spaces or respect from these segment themselves since they are interconnected from one another.
 
-2. The prompt feels too slow...
+2. The prompt feels quite slow...
 
    > There are two verdicts. [a] The data being queued from the both local (which is 'git', it parses your branch and repo state, note that I did not use **posh-git** in this theme, see FAQ #5. In terms of being slow, see this [FAQ entry](https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands).) and from remote (via HTTP, queueing Wakatime stats (if possible)). And your powershell (`pwsh`) version (You need to upgrade as upstream as possible). The figure below shows the debug output just from typing `oh-my-posh debug`.
 
@@ -94,19 +102,20 @@ The following contains information on how I was able to manipulate the theme to 
 
    > I'm aware. oh-my-posh `posh-git` docs doesn't show any examples or further modification than what is being provided in the `git` segment. While I do understand the compromise of performance over customization, I think its best to customize the output to further understand more about what are the symbols behind them. Because in my perspective, I'm pretty much confused about it. To solve the contention from this issue, I'm hoping that `posh-git` is customizable as `git` segment.
 
-6. Why start at `1.0.0`?
-
-   > Initial development of theme were not reflected due to the fact that I was having a hard time creating a small script to transport changes from local (home) to remote (cloned repo). Also, as per its state being set to `public`, it was done when I was reporting an [issue in oh-my-posh repository](https://github.com/JanDeDobbeleer/oh-my-posh/issues/2679), wherein theme is required for evaluation of the said report.
-
-7. When I disabled "wakatime" segment, why it still feels so slow?
+6. When I disabled "wakatime" segment, why it still feels so slow?
 
    > As of now (08/26/2022), there is no switch for the HTTP query to be disabled when a certain environment variable invalidates truthy condition. I suggest trying to nullify the value of your 'WAKATIME_API_KEY' and see if it works or ignores calling HTTP request.
 
-8. What are your basis for the wakatime's timeout values?
+7. What are your basis for the wakatime's timeout values?
+
    > They were based on my preference with consideration on my ISP speed.
 
-## Tools Used
+8. Why the `Code Return` sometimes returns high value of `unsigned | signed int` or just big numbers?
+   > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **asumption** but its something related to that.
 
+## Tools
+
+- [Material Design's Color Tool](https://material.io/resources/color/) — Create, share, and apply color palettes to your UI, as well as measure the accessibility level of any color combination.
 - [regular expressions 101](https://regex101.com/) — Just a regex validator.
 
 ## Credits
