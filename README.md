@@ -90,6 +90,8 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
 7. Why the `Code Return` sometimes returns high value of `signed int` or just big numbers?
    > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **asumption** but its something related to that.
+   
+> Was your question does not relate to what I put here? Let me know in the **Issue** section.
 
 ## Tools
 
@@ -102,4 +104,4 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
 ## Credits
 
-* [JanDeDobbeleer][oh-my-posh] for the amazing zsh-like integration for the powershell.
+* [JanDeDobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh) for the amazing zsh-like integration for the powershell.
