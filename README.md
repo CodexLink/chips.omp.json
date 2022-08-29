@@ -59,6 +59,8 @@ Please understood that the theme may look different depending on your configurat
 
 > Note that my custom font has issues in regards to single-width and double-width for other icons, some icons went smaller than what is being rendered from the `oh-my-posh` config export renderer.
 
+**Also please note**, the screenshots provided here has the theme version of commit [91cc394](https://github.com/CodexLink/chips.omp.json/commit/91cc394f1bcca0fa0103b6fa7156edd83ae586b6), before changes were done from the git branch indicator refactorization.
+
 ### Environment Variable Render Variants
 
 <div align="center">
