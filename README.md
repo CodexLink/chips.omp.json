@@ -19,7 +19,6 @@ _Designed to be compatible for translucent, dark-and-white influenced background
 - Transient Prompt with Insights of Previous Recent Execution Time and Command Return Code, Invoked
 - Wakatime Daily Tracking Supported
 
-
 ## Installation
 
 1. Click on the [theme file](https://github.com/CodexLink/chips.omp.json/blob/latest/chips.omp.json) in this repository, then right-click the **Raw** button and save it as `chips.omp.json` to your designated directory (_by default it should be at your home directory_).
@@ -27,31 +26,58 @@ _Designed to be compatible for translucent, dark-and-white influenced background
    > `oh-my-posh --config ~/chips.omp.json --init --shell pwsh | Invoke-Expression`
 3. **Restart your prompt** or **_refresh your prompt_** by running the following command: `. $PROFILE` and you are good to go!
 
+## Environment Variables
+
+The theme is designed to be **flexible** as possible by providing users a choice of filling up the following environment variables that allows for a _segment_ to **disappear** or **explicitly otherwise**.
+
+<div align="center">
+
+| Env. Var.                                  | Type   | Default Value                                                                                                                                                                                                                                                                                                                                  | Functionality (Description)                                                                                                                                                                                     |
+| ------------------------------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SEGMENT_DISABLE_BATTERY                    | bool   | **False** _($false)_                                                                                                                                                                                                                                                                                                                           | Hides the `BATTERY` segment found on the top-right of the prompt when value is set to **True** (_$true_).                                                                                                       |
+| SEGMENT_DISABLE_DTIME                      | bool   | **False** _($false)_                                                                                                                                                                                                                                                                                                                           | Hides the `DTIME` segment found on the top-right of the prompt when the value is set to **True** (_$true_).                                                                                                     |
+| SEGMENT_DISABLE_PROJECT_PYTHON             | bool   | **False** _($false)_                                                                                                                                                                                                                                                                                                                           | Hides the `PYTHON` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_). This ignores the value of `SEGMENT_DISABLE_PROJECT_PYTHON_VENV`.        |
+| SEGMENT_DISABLE_PROJECT_PYTHON_VENV        | bool   | **False** _($false)_                                                                                                                                                                                                                                                                                                                           | Hides the `VENV` string display after `venv` detection when the value is set to **True** (_$true_). This ignores the value of `SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR`.                                         |
+| SEGMENT_DISABLE_TRANSIENT                  | bool   | **False** _($false)_                                                                                                                                                                                                                                                                                                                           | Completely hides the transient segment that contains previous command's return code and execution time when the value is set to `True`. This ignores the value of `SEGMENT_DISABLE_TRANSIENT_RECENT_EXEC_TIME`. |
+| SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR     | string | None                                                                                                                                                                                                                                                                                                                                           | Alternatively replaces the name of the `venv` that is currently activated from the prompt. This is useful when the length of the name disrespects the space of your input buffer.                               |
+| SEGMENT_DISABLE_TRANSIENT_RECENT_EXEC_TIME | $false | Hides the `execution time` of the previous command executed from the transient prompt.                                                                                                                                                                                                                                                         |
+| SEGMENT_DISABLE_WAKATIME                   | $false | Hides the `WAKATIME` segment. Note that the segment is still active when `WAKATIME_API_KEY` is valid to be queued for new data. This feature is only useful when you wanted to hide the segment when the prompt's width makes the prompt display undesirable, but still wants it to be accessible later without reconfiguring your `$PROFILE`. |
+| WAKATIME_API_KEY                           | string | None                                                                                                                                                                                                                                                                                                                                           | The string that contains the API key that can make the prompt engine queue at for new data for every `CACHE_TIMEOUT`.                                                                                           |
+
+</div>
+
+#### Notes to Consider
+
+1. Please note that these environment variables are purely **optional**, explicitly declaring them is fine, but this does not mean anything unless their values are the opposite of what is provided in their default values.
+2. These environment variables are accessible in runtime or once they are loaded. You do not need to modify `$PROFILE` or the theme itself if these changes are temporary. The theme will adjust in an-instant.
+3. Despite adjusting the environment variables both via `$PROFILE` and by on runtime, you do not need to restart your prompt for the changes to take effect.
+4. Some segments cannot be disabled because they are the vital part of the theme. Those segments are: **Folder**, **Git**, and **Time Execution**.
+
 ## Showcase
 
 Please understood that the theme may look different depending on your configuration such as the font ligatures embedded on your custom font, your prompt and other factors that affects the visuals of your prompt. Please see [my dotfiles](https://github.com/CodexLink/dotfiles-configs-archive) and check the folder `dist/font` if you want to get the same feeling and font + glyphs rendering.
 
 > Note that my custom font has issues in regards to single-width and double-width for other icons, some icons went smaller than what is being rendered from the `oh-my-posh` config export renderer.
 
-### Env. Variants + Customized String Env Indicator
+### Environment Variable Render Variants
 
 <div align="center">
-   
+
 [![chips.omp.json env showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_env_variants.png)](https://ohmyposh.dev/docs/themes#chips)
 
 </div>
-   
-### Git States (Color-Changing)
+
+### Git States Segment
 
 <div align="center">
-   
+
 [![chips.omp.json git states showcase #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_git_states_1.gif)](https://ohmyposh.dev/docs/themes#chips)
-   
+
 [![chips.omp.json git states showcase #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_git_states_2.gif)](https://ohmyposh.dev/docs/themes#chips)
 
 </div>
-   
-### SSH and Root Privilege Segments
+
+### SSH and Root Privilege State Segments
 
 <div align="center">
 
@@ -64,11 +90,11 @@ Please understood that the theme may look different depending on your configurat
 ### Transient Prompt with Insights of Previous Command
 
 <div align="center">
-   
+
 [![chips.omp.json transient showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_transient.gif)](https://ohmyposh.dev/docs/themes#chips)
 
 </div>
-   
+
 ## TODO Features
 
 The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
@@ -110,7 +136,6 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
 7. Why does the `Code Return` sometimes returns high value of `signed int` or just big numbers?
    > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **asumption** but its something related to that.
-   
 
 > Was your question does not relate to what I put here? Let me know in the **Issue** section.
 
@@ -125,4 +150,4 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
 ## Credits
 
-* [JanDeDobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh) for the amazing zsh-like integration for the powershell.
+- [JanDeDobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh) for the amazing zsh-like integration for the powershell.
