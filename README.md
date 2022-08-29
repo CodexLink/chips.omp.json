@@ -3,17 +3,24 @@
 The `passively-active, with cutting edge release` development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips.
 
 [![chips.omp.json highlight #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_1.png)](https://ohmyposh.dev/docs/themes#chips)
+[![chips.omp.json highlight #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_2.png)](https://ohmyposh.dev/docs/themes#chips)
+[![chips.omp.json highlight #3](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_3.png)](https://ohmyposh.dev/docs/themes#chips)
+
+_Designed to be compatible for translucent, dark-and-white influenced background prompts. Based on Material Design Components: Chips, which allows for displayed data to be displayed elegantly. And also, Material Colors were applied varying from A100 to A400 Color Palettes. **More examples below.**_
 
 ## Features
 
-- Backtracking Transient Prompt for Previous Recent Execution Time and Command Return Code
-- Color-Adjustable with Palettes
+
+- Color-Adjustable Segments with Palettes
 - Color-Changing Segments Based on Activity Context Conditions
 - Color Candidates for Segments uses the Material Palette Color from A100 to A400
 - Explicitly-Optional-able (Primary Top and Secondary Left Candidates Only) Segments
 - Minimalized Console Title
-- Respects Input Buffer by Carefully Placing Segments on Non-Invasive Seciton
-- Segments Individualized as a Seperate Component (_some segments were coded as a whole_)
+- Hideable Segments via Env Vars on Powershell Profile
+- Python: Version + Virtual Env. Detection Supported
+- Transient Prompt with Insights of Previous Recent Execution Time and Command Return Code, Invoked
+- Wakatime Daily Tracking Supported
+
 
 ## Installation
 
@@ -24,65 +31,64 @@ The `passively-active, with cutting edge release` development repository for the
 
 ## Showcase
 
-- TODO.
+### Env. Variants + Customized String Env Indicator
 
-### More General Prompt Display
+[![chips.omp.json env showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_env_variants.png)](https://ohmyposh.dev/docs/themes#chips)
 
-- TODO.
+### Git States (Color-Changing)
 
-### Backtracked Insights from Previous Commands
+[![chips.omp.json git states showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_git_states.gif)](https://ohmyposh.dev/docs/themes#chips)
 
-- TODO.
+### SSH and Root Privilege Segments
 
-### Color-Adjusting Segments
+[![chips.omp.json ssh and root showcase #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants_1.png)](https://ohmyposh.dev/docs/themes#chips)
 
-- TODO.
+[![chips.omp.json ssh and root showcase #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants_2.png)](https://ohmyposh.dev/docs/themes#chips)
 
-## Leftout Features
+### Transient Prompt with Insights of Previous Command
 
-The following are some of the features that I cut off **_for now_**, due to me, not using it, or has no other ways for me to test it or install it.
+[![chips.omp.json transient showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_transient.gif)](https://ohmyposh.dev/docs/themes#chips)
+
+## TODO Features
+
+The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
 
 1. Other Programming Language Project Segment
+   - [ ] Crystal
+   - [ ] Flutter
+   - [ ] Lua
+   - [ ] NPM
+   - [ ] Rust
 
-   - Programming languages that I have is currently **Python** and I'm currently planning to add **Lua**, **Flutter** and **Rust** in the future. let me know what other programming languages I can include by issuing them in **Issue**.
-
-     > Note that, you have to make sure that language is supported from one of the segments offered in **oh-my-posh Segment Section**. Otherwise, create a feature request on them.
-
-## Contribution
-
-- TODO.
+     > Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
 
 ## FAQ
 
-1. Why?
-
-   > Preferences. Most themes IMO are somewhat clusterred, which provides no spaces or respect from these segment themselves since they are interconnected from one another.
-
-2. The prompt feels quite slow...
+1. The prompt feels quite slow...
 
    > There are two verdicts. [a] The data being queued from the both local (which is 'git', it parses your branch and repo state, note that I did not use **posh-git** in this theme, see FAQ #5. In terms of being slow, see this [FAQ entry](https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands).) and from remote (via HTTP, queueing Wakatime stats (if possible)). And your powershell (`pwsh`) version (You need to upgrade as upstream as possible). The figure below shows the debug output just from typing `oh-my-posh debug`.
 
-3. Why `transient prompt` contains one-liner that contains multiple segments?
+2. Why `transient prompt` contains one-liner that contains multiple segments?
 
    > Accoding to the docs and as per explanation provided by the creator from my [issue](https://github.com/JanDeDobbeleer/oh-my-posh/issues/2605), 'transient prompt` use case is intended to be more simplier than the other prompt because its nature was to provide a clean output from other prompts. With its feature limitation, I want to do more than just that, by providing previous and current insights about the command, I was able to create or manifest the structure of the segment to be more the same as how I display other segment from other prompt.
 
-4. Sometimes my prompt just hangs. Why?
+3. Sometimes my prompt just hangs. Why?
 
-   > If you are using Wakatime, you have to keep note that the cache time is set to `10m` or 10 minutes by default. Therefore, every 10 minutes the prompt will do an HTTP request to get the latest upstream of your stats. If you are not using Wakatime and this issue occurs, please investigate the state of the prompt by **debugging** it. Please let me know with sufficient information if it persists.
+   > If you are using _**Wakatime**_, you have to keep note that the cache time is set to `5m` or 5 minutes by default. Therefore, every 5 minutes, the prompt will do an HTTP request to get the latest upstream of your stats. If you are not using Wakatime and this issue occurs, please investigate the state of the prompt by **debugging** it (_with the use of _ `oh-my-posh debug`). Please let me know with sufficient information if it persists.
 
-5. Why did you not use `posh-git`? You know that `git` segment is slower right?
+4. Why did you not use `posh-git`? You know that `git` segment is slower right?
 
    > I'm aware. oh-my-posh `posh-git` docs doesn't show any examples or further modification than what is being provided in the `git` segment. While I do understand the compromise of performance over customization, I think its best to customize the output to further understand more about what are the symbols behind them. Because in my perspective, I'm pretty much confused about it. To solve the contention from this issue, I'm hoping that `posh-git` is customizable as `git` segment.
 
-6. When I disabled "wakatime" segment, why it still feels so slow?
+5. When I disabled "wakatime" segment, why it's still slow?
 
    > As of now (08/26/2022), there is no switch for the HTTP query to be disabled when a certain environment variable invalidates truthy condition. I suggest trying to nullify the value of your 'WAKATIME_API_KEY' and see if it works or ignores calling HTTP request.
 
-7. What are your basis for the wakatime's timeout values?
+6. What are your basis for the wakatime's timeout values?
 
-   > They were based on my preference with consideration on my ISP speed.
+   > They were based on my preference with consideration on my ISP speed. Please adjust them from the theme itself. Environment Variables for adjusting parameters such as timeouts were not supported as of 08/29/2022. **_Let me know if it is because I also need it._**
 
-8. Why the `Code Return` sometimes returns high value of `unsigned | signed int` or just big numbers?
+7. Why the `Code Return` sometimes returns high value of `signed int` or just big numbers?
    > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **asumption** but its something related to that.
 
 ## Tools
@@ -90,6 +96,10 @@ The following are some of the features that I cut off **_for now_**, due to me, 
 - [Material Design's Color Tool](https://material.io/resources/color/) — Create, share, and apply color palettes to your UI, as well as measure the accessibility level of any color combination.
 - [regular expressions 101](https://regex101.com/) — Just a regex validator.
 
+## Contribution
+
+- TODO. — _More information coming soon. Have to construct the template._
+
 ## Credits
 
-- TODO.
+* [JanDeDobbeleer][oh-my-posh] for the amazing zsh-like integration for the powershell.
