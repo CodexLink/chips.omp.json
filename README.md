@@ -10,13 +10,11 @@ _Designed to be compatible for translucent, dark-and-white influenced background
 
 ## Features
 
-
 - Color-Adjustable Segments with Palettes
 - Color-Changing Segments Based on Activity Context Conditions
 - Color Candidates for Segments uses the Material Palette Color from A100 to A400
-- Explicitly-Optional-able (Primary Top and Secondary Left Candidates Only) Segments
+- Explicitly-Optional-able (Primary Top and Secondary Left Candidates Only) Segments via **Env Vars** on **Powershell Profile**
 - Minimalized Console Title
-- Hideable Segments via Env Vars on Powershell Profile
 - Python: Version + Virtual Env. Detection Supported
 - Transient Prompt with Insights of Previous Recent Execution Time and Command Return Code, Invoked
 - Wakatime Daily Tracking Supported
@@ -27,9 +25,13 @@ _Designed to be compatible for translucent, dark-and-white influenced background
 1. Click on the [theme file](https://github.com/CodexLink/chips.omp.json/blob/latest/chips.omp.json) in this repository, then right-click the **Raw** button and save it as `chips.omp.json` to your designated directory (_by default it should be at your home directory_).
 2. On your powershell profile (`$PROFILE`), invoke the theme to the oh-my-posh arguments.
    > `oh-my-posh --config ~/chips.omp.json --init --shell pwsh | Invoke-Expression`
-3. Restart your prompt or Refresh your prompt by running the following command: `. $PROFILE` and you are good to go!
+3. **Restart your prompt** or **_refresh your prompt_** by running the following command: `. $PROFILE` and you are good to go!
 
 ## Showcase
+
+Please understood that the theme may look different depending on your configuration such as the font ligatures embedded on your custom font, your prompt and other factors that affects the visuals of your prompt. Please see [my dotfiles](https://github.com/CodexLink/dotfiles-configs-archive) and check the folder `dist/font` if you want to get the same feeling and font + glyphs rendering.
+
+> Note that my custom font has issues in regards to single-width and double-width for other icons, some icons went smaller than what is being rendered from the `oh-my-posh` config export renderer.
 
 ### Env. Variants + Customized String Env Indicator
 
