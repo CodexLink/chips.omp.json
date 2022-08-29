@@ -10,13 +10,11 @@ _Designed to be compatible for translucent, dark-and-white influenced background
 
 ## Features
 
-
 - Color-Adjustable Segments with Palettes
 - Color-Changing Segments Based on Activity Context Conditions
 - Color Candidates for Segments uses the Material Palette Color from A100 to A400
-- Explicitly-Optional-able (Primary Top and Secondary Left Candidates Only) Segments
+- Explicitly-Optional-able (Primary Top and Secondary Left Candidates Only) Segments via **Env Vars** on **Powershell Profile**
 - Minimalized Console Title
-- Hideable Segments via Env Vars on Powershell Profile
 - Python: Version + Virtual Env. Detection Supported
 - Transient Prompt with Insights of Previous Recent Execution Time and Command Return Code, Invoked
 - Wakatime Daily Tracking Supported
@@ -27,28 +25,50 @@ _Designed to be compatible for translucent, dark-and-white influenced background
 1. Click on the [theme file](https://github.com/CodexLink/chips.omp.json/blob/latest/chips.omp.json) in this repository, then right-click the **Raw** button and save it as `chips.omp.json` to your designated directory (_by default it should be at your home directory_).
 2. On your powershell profile (`$PROFILE`), invoke the theme to the oh-my-posh arguments.
    > `oh-my-posh --config ~/chips.omp.json --init --shell pwsh | Invoke-Expression`
-3. Restart your prompt or Refresh your prompt by running the following command: `. $PROFILE` and you are good to go!
+3. **Restart your prompt** or **_refresh your prompt_** by running the following command: `. $PROFILE` and you are good to go!
 
 ## Showcase
 
+Please understood that the theme may look different depending on your configuration such as the font ligatures embedded on your custom font, your prompt and other factors that affects the visuals of your prompt. Please see [my dotfiles](https://github.com/CodexLink/dotfiles-configs-archive) and check the folder `dist/font` if you want to get the same feeling and font + glyphs rendering.
+
+> Note that my custom font has issues in regards to single-width and double-width for other icons, some icons went smaller than what is being rendered from the `oh-my-posh` config export renderer.
+
 ### Env. Variants + Customized String Env Indicator
 
+<div align="center">
+   
 [![chips.omp.json env showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_env_variants.png)](https://ohmyposh.dev/docs/themes#chips)
 
+</div>
+   
 ### Git States (Color-Changing)
 
-[![chips.omp.json git states showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_git_states.gif)](https://ohmyposh.dev/docs/themes#chips)
+<div align="center">
+   
+[![chips.omp.json git states showcase #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_git_states_1.gif)](https://ohmyposh.dev/docs/themes#chips)
+   
+[![chips.omp.json git states showcase #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_git_states_2.gif)](https://ohmyposh.dev/docs/themes#chips)
 
+</div>
+   
 ### SSH and Root Privilege Segments
+
+<div align="center">
 
 [![chips.omp.json ssh and root showcase #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants_1.png)](https://ohmyposh.dev/docs/themes#chips)
 
 [![chips.omp.json ssh and root showcase #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants_2.png)](https://ohmyposh.dev/docs/themes#chips)
 
+</div>
+
 ### Transient Prompt with Insights of Previous Command
 
+<div align="center">
+   
 [![chips.omp.json transient showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_transient.gif)](https://ohmyposh.dev/docs/themes#chips)
 
+</div>
+   
 ## TODO Features
 
 The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
@@ -60,7 +80,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
    - [ ] NPM
    - [ ] Rust
 
-     > Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
+> Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
 
 ## FAQ
 
@@ -80,7 +100,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
    > I'm aware. oh-my-posh `posh-git` docs doesn't show any examples or further modification than what is being provided in the `git` segment. While I do understand the compromise of performance over customization, I think its best to customize the output to further understand more about what are the symbols behind them. Because in my perspective, I'm pretty much confused about it. To solve the contention from this issue, I'm hoping that `posh-git` is customizable as `git` segment.
 
-5. When I disabled "wakatime" segment, why it's still slow?
+5. When I disabled the "wakatime" segment, why it's still slow?
 
    > As of now (08/26/2022), there is no switch for the HTTP query to be disabled when a certain environment variable invalidates truthy condition. I suggest trying to nullify the value of your 'WAKATIME_API_KEY' and see if it works or ignores calling HTTP request.
 
@@ -88,9 +108,10 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
    > They were based on my preference with consideration on my ISP speed. Please adjust them from the theme itself. Environment Variables for adjusting parameters such as timeouts were not supported as of 08/29/2022. **_Let me know if it is because I also need it._**
 
-7. Why the `Code Return` sometimes returns high value of `signed int` or just big numbers?
+7. Why does the `Code Return` sometimes returns high value of `signed int` or just big numbers?
    > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **asumption** but its something related to that.
    
+
 > Was your question does not relate to what I put here? Let me know in the **Issue** section.
 
 ## Tools
