@@ -83,7 +83,7 @@
             "cache_timeout": 5
           },
           "style": "diamond",
-          "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_WAKATIME))) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
+          "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_WAKATIME))) (gt (.CummulativeTotal.Seconds | toDecimal) 0) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "wakatime"
         },
