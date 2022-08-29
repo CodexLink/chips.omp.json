@@ -2,10 +2,6 @@
 
 The `passively-active, with cutting edge release` development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips.
 
-# Notice
-
-Theme is finished! Documentation is the only thing lef before proceeding with PR to the official oh-my-posh repository for publishing.
-
 [![chips.omp.json highlight #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_1.png)](https://ohmyposh.dev/docs/themes#chips)
 
 ## Features
@@ -44,37 +40,13 @@ Theme is finished! Documentation is the only thing lef before proceeding with PR
 
 ## Leftout Features
 
-The following are some of the features that I cut off **_for now_**, due to me, not using it, or has no other ways for me to test it.
+The following are some of the features that I cut off **_for now_**, due to me, not using it, or has no other ways for me to test it or install it.
 
 1. Other Programming Language Project Segment
 
-   - Programming languages that I have is currently **Python** and I'm currently planning to add **Rust** and **Flutter** in the future. let me know what other programming languages I can include by issuing them in **Issue**.
+   - Programming languages that I have is currently **Python** and I'm currently planning to add **Lua**, **Flutter** and **Rust** in the future. let me know what other programming languages I can include by issuing them in **Issue**.
 
      > Note that, you have to make sure that language is supported from one of the segments offered in **oh-my-posh Segment Section**. Otherwise, create a feature request on them.
-
-## Technicals
-
-The following contains information on how I was able to manipulate the theme to provide my needs.
-
-### Dealing with the Environment Variables, both Empty and Empty or Invalid Value
-
-- TODO.
-
-### Dealing with the Limitation of Transient Prompt
-
-- TODO.
-
-### Adding Segment on One Segment without Duplication
-
-- TODO.
-
-### `toBool` in sprig doesn't exists. Now what?
-
-- TODO.
-
-### Solution to Leading and Trailing Diamonds being treated as Text on Templates
-
-- TODO.
 
 ## Contribution
 
