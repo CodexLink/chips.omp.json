@@ -80,7 +80,7 @@
           "properties": {
             "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}",
             "http_timeout": 2000,
-            "cache_timeout": 5
+            "cache_timeout": 1
           },
           "style": "diamond",
           "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_WAKATIME))) (gt (.CummulativeTotal.Seconds | toDecimal) 0) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
@@ -145,8 +145,22 @@
           "leading_diamond": "\uE0B6",
           "style": "diamond",
           "template": "{{ if or (.Segments.Session.SSHSession) (.Root) }}{{ if .Segments.Session.SSHSession }}\uE7A2 SSH{{ end }}{{ if and (.Segments.Session.SSHSession) (.Root) }} \uE621 {{ end }}{{ if .Root }}# Root{{ end }}{{ end }}",
-          "trailing_diamond": "\uE0B4 ",
+          "trailing_diamond": "\uE0B4",
           "type": "text"
+        },
+        {
+          "background": "p:c-project-node",
+          "foreground": "p:c-badge-text",
+          "leading_diamond": "\uE0B6",
+          "template": "\uE718 {{ .Full }}",
+          "powerline_symbol": "\uE0B0",
+          "properties": {
+            "disply_mode": "files",
+            "fetch_package_manager": true
+          },
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "node"
         },
         {
           "background": "p:c-project-python",
@@ -205,6 +219,7 @@
     "c-git-staging-working": "#FFB2FF",
     "c-git-upstream-gone": "#FF867F",
     "c-git-working": "#84FFFF",
+    "c-project-node": "#E7FF8C",
     "c-project-python": "#FFE873",
     "c-secondary-ellipsis": "#FFFF8D",
     "c-shell-state-ssh-active": "#BAFFFF",

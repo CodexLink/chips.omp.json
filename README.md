@@ -1,4 +1,4 @@
-# chips.omp.json
+# `chips.omp.json`
 
 The `passively-active, with cutting edge release` development repository for the Oh-My-Posh Theme Based on Material Design Component: Chips.
 
@@ -43,7 +43,7 @@ The theme is designed to be **flexible** as possible by providing users a choice
 | \_PRIMARY_EXEC_TIME                                    | bool   | **False** _($false)_ | Hides the `execution time` that is shown (in the primary prompt, _top-right_) after a command has been executed.                                                                                                                                                                                                                               |
 | \_TRANSIENT_EXEC_TIME                                  | bool   | **False** _($false)_ | Hides the `execution time` of the the transient prompt based on the recent command before the transient prompt.                                                                                                                                                                                                                                |
 | \_WAKATIME                                             | bool   | **False** _($false)_ | Hides the `WAKATIME` segment. Note that the segment is still active when `WAKATIME_API_KEY` is valid to be queued for new data. This feature is only useful when you wanted to hide the segment when the prompt's width makes the prompt display undesirable, but still wants it to be accessible later without reconfiguring your `$PROFILE`. |
-| WAKATIME_API_KEY                                       | string | None                 | The string that contains the API key that can make the prompt engine queue at for new data for every `CACHE_TIMEOUT`.                                                                                                                                                                                                                          |
+| WAKATIME_API_KEY                                       | string | None                 | The string that contains the API key that can make the prompt engine queue for new data for every `CACHE_TIMEOUT`.                                                                                                                                                                                                                             |
 
 </div>
 
@@ -106,7 +106,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
    - [ ] Crystal
    - [ ] Flutter
    - [ ] Lua
-   - [ ] NPM
+   - [x] NPM
    - [ ] Rust
 
 > Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
