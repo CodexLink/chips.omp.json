@@ -152,13 +152,13 @@
           "background": "p:c-project-node",
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
-          "template": "\uE718 {{ .Full }}",
           "powerline_symbol": "\uE0B0",
           "properties": {
             "disply_mode": "files",
             "fetch_package_manager": true
           },
           "style": "diamond",
+          "template": "\uE718 {{ .Full }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "node"
         },

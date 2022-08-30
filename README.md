@@ -106,7 +106,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
    - [ ] Crystal
    - [ ] Flutter
    - [ ] Lua
-   - [x] NPM
+   - [x] Node
    - [ ] Rust
 
 > Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
