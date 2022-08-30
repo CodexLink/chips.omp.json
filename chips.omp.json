@@ -149,7 +149,9 @@
           "type": "text"
         },
         {
-          "background": "p:c-project-node",
+          "background_templates": [
+            "{{ if empty .Full }}p:c-project-node-error{{ else }}p:c-project-node{{ end }}"
+          ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
           "powerline_symbol": "\uE0B0",
@@ -158,7 +160,7 @@
             "fetch_package_manager": true
           },
           "style": "diamond",
-          "template": "\uE718 {{ .Full }}",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}\uE718 {{ if not (empty .Full) }}{{ .Full }}{{ else }}No Version{{ if .Error }}({{ .Error }}){{ end }}{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "node"
         },
@@ -219,7 +221,8 @@
     "c-git-staging-working": "#FFB2FF",
     "c-git-upstream-gone": "#FF867F",
     "c-git-working": "#84FFFF",
-    "c-project-node": "#E7FF8C",
+    "c-project-node": "#9CFF57",
+    "c-project-node-error": "#FF867F",
     "c-project-python": "#FFE873",
     "c-secondary-ellipsis": "#FFFF8D",
     "c-shell-state-ssh-active": "#BAFFFF",
