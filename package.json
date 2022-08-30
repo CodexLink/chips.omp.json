@@ -5,8 +5,8 @@
   "scripts": {
     "copy-local": "pwsh -NoProfile -Command Copy-Item -Destination \"./\" -Path \"~/chips.omp.json\" -Confirm",
     "copy-git": "pwsh -NoProfile -Command Copy-Item -Destination \"~/\" -Path \"chips.omp.json\"  -Confirm",
-    "snapshot-local-ref": "pwsh -Command Write-Host -Message 'oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config ~/chips.omp.json --cursor-padding 50 --rprompt-offset 30 --output highlight.png'",
-    "snapshot-remote": "oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config chips.omp.json --cursor-padding 50 --rprompt-offset 30 --output assets\\highlight_temp.png"
+    "snapshot-local-ref": "pwsh -Command Write-Host \"oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config ~/chips.omp.json --cursor-padding 20 --rprompt-offset 20 --output highlight.png\"",
+    "snapshot-remote": "oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config chips.omp.json --cursor-padding 20 --rprompt-offset 20 --output assets\\highlight_temp.png"
   },
   "repository": {
     "type": "git",

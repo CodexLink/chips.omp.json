@@ -30,22 +30,19 @@ _Designed to be compatible for translucent, dark-and-white influenced background
 
 The theme is designed to be **flexible** as possible by providing users a choice of filling up the following environment variables that allows for a _segment_ to **disappear** or **explicitly otherwise**.
 
-<div align="center">
-
-| Env. Var. (Append `SEGMENT_DISABLE` with prefixes `_`) | Type   | Default Value        | Functionality (Description)                                                                                                                                                                                                                                                                                                                    |
+| Env. Var. (Append `DISABLE_SEGMENT` with prefixes `_`) | Type   | Default Value        | Functionality (Description)                                                                                                                                                                                                                                                                                                                    |
 | ------------------------------------------------------ | ------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | \_BATTERY                                              | bool   | **False** _($false)_ | Hides the `BATTERY` segment found on the top-right of the prompt when value is set to **True** (_$true_).                                                                                                                                                                                                                                      |
 | \_DTIME                                                | bool   | **False** _($false)_ | Hides the `DTIME` segment found on the top-right of the prompt when the value is set to **True** (_$true_).                                                                                                                                                                                                                                    |
-| \_PROJECT_PYTHON                                       | bool   | **False** _($false)_ | Hides the `PYTHON` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_). This ignores the value of `SEGMENT_DISABLE_PROJECT_PYTHON_VENV`.                                                                                                                                       |
+| \_PROJECT_NODE                                         | bool   | **False** _($false)_ | Hides the `NODE` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_).                                                                                                                                                                                                          |
+| \_PROJECT_PYTHON                                       | bool   | **False** _($false)_ | Hides the `PYTHON` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_). This ignores the value of `DISABLE_SEGMENT_PROJECT_PYTHON_VENV`.                                                                                                                                       |
 | \_PROJECT_PYTHON_VENV                                  | bool   | **False** _($false)_ | Hides the `VENV` string display after `venv` detection when the value is set to **True** (_$true_). This ignores the value of `SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR`.                                                                                                                                                                        |
-| \_TRANSIENT                                            | bool   | **False** _($false)_ | Completely hides the transient segment that contains previous command's return code and execution time when the value is set to `True`. This ignores the value of `SEGMENT_DISABLE_TRANSIENT_EXEC_TIME`.                                                                                                                                       |
-| \_PYTHON_ACTIVE_VENV_STR                               | string | None                 | Alternatively replaces the name of the `venv` that is currently activated from the prompt. This is useful when the length of the name disrespects the space of your input buffer.                                                                                                                                                              |
 | \_PRIMARY_EXEC_TIME                                    | bool   | **False** _($false)_ | Hides the `execution time` that is shown (in the primary prompt, _top-right_) after a command has been executed.                                                                                                                                                                                                                               |
+| \_TRANSIENT                                            | bool   | **False** _($false)_ | Completely hides the transient segment that contains previous command's return code and execution time when the value is set to `True`. This ignores the value of `DISABLE_SEGMENT_TRANSIENT_EXEC_TIME`.                                                                                                                                       |
 | \_TRANSIENT_EXEC_TIME                                  | bool   | **False** _($false)_ | Hides the `execution time` of the the transient prompt based on the recent command before the transient prompt.                                                                                                                                                                                                                                |
 | \_WAKATIME                                             | bool   | **False** _($false)_ | Hides the `WAKATIME` segment. Note that the segment is still active when `WAKATIME_API_KEY` is valid to be queued for new data. This feature is only useful when you wanted to hide the segment when the prompt's width makes the prompt display undesirable, but still wants it to be accessible later without reconfiguring your `$PROFILE`. |
-| WAKATIME_API_KEY                                       | string | None                 | The string that contains the API key that can make the prompt engine queue for new data for every `CACHE_TIMEOUT`.                                                                                                                                                                                                                             |
-
-</div>
+| **SEGMENT_PROJECT**<br>PYTHON_ACTIVE_VENV_STR          | string | None                 | Alternatively replaces the name of the `venv` that is currently activated from the prompt. This is useful when the length of the name disrespects the space of your input buffer.                                                                                                                                                              |
+| **WAKATIME\_**<br>API_KEY                              | string | None                 | The string that contains the API key that can make the prompt engine queue for new data for every `CACHE_TIMEOUT`.                                                                                                                                                                                                                             |
 
 #### Notes to Consider
 
@@ -56,11 +53,11 @@ The theme is designed to be **flexible** as possible by providing users a choice
 
 ## Showcase
 
-Please understood that the theme may look different depending on your configuration such as the font ligatures embedded on your custom font, your prompt and other factors that affects the visuals of your prompt. Please see [my dotfiles](https://github.com/CodexLink/dotfiles-configs-archive) and check the folder `dist/font` if you want to get the same feeling and font + glyphs rendering.
+Please understood that the theme may look different depending on your configuration such as the font ligatures embedded on your custom font, your prompt and other factors that affects the visuals of your prompt. Please see [my dotfiles](https://github.com/CodexLink/dotfiles-configs-archive) and check the folder `dist/font` and `cli/win32` if you want to get the same feeling (ie. command-hinting, command-shortcut, etc.) and font + glyphs rendering.
 
 > Note that my custom font has issues in regards to single-width and double-width for other icons, some icons went smaller than what is being rendered from the `oh-my-posh` config export renderer.
 
-**Also please note**, the screenshots provided here has the theme version of commit [91cc394](https://github.com/CodexLink/chips.omp.json/commit/91cc394f1bcca0fa0103b6fa7156edd83ae586b6). Next commit will further re-new all screeenshots with same terminal width size.
+**Also please note**, the screenshots provided here has a parsing error for the wakatime, rendering the wakatime segment have a same cyan-like color when it shouldn't be, the section showcasing the `On-Spot Prompt Adjustment` and its preceeding sections shows the fixed color render for the wakatime segment, where I just noticed and was able to fix it in `v1.0.0`.
 
 ### Environment Variable Render Variants
 
@@ -84,15 +81,17 @@ Please understood that the theme may look different depending on your configurat
 
 <div align="center">
 
-[![chips.omp.json ssh and root showcase #1](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants_1.png)](https://ohmyposh.dev/docs/themes#chips)
-
-[![chips.omp.json ssh and root showcase #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants_2.png)](https://ohmyposh.dev/docs/themes#chips)
+[![chips.omp.json ssh and root showcase](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_ssh_and_root_variants.png)](https://ohmyposh.dev/docs/themes#chips)
 
 </div>
 
-### On-spot Prompt Adjustment
+### On-The-Spot Prompt Adjustment
 
 _Please note that this is also possible when modifying `$PROFILE`. Just reload the prompt with `. $PROFILE` and the changes will be reflected._
+
+Also note that I adlib this demonstration, more information and other hideable segments in the [Environment Variables section](#environment-variables).
+
+[![chips.omp.json on-the-spot env. change](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_on_the_spot_env_change.png)](https://ohmyposh.dev/docs/themes#chips)
 
 ### Transient Prompt with Insights of Previous Command
 
