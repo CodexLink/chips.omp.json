@@ -90,6 +90,10 @@ Please understood that the theme may look different depending on your configurat
 
 </div>
 
+### On-spot Prompt Adjustment
+
+_Please note that this is also possible when modifying `$PROFILE`. Just reload the prompt with `. $PROFILE` and the changes will be reflected._
+
 ### Transient Prompt with Insights of Previous Command
 
 <div align="center">
@@ -105,7 +109,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
 1. Other Programming Language Project Segment
    - [ ] Crystal
    - [ ] Flutter
-   - [ ] Lua
+   - [ ] Lua (_Next, currently figuring it how to detect the executable._)
    - [x] Node
    - [ ] Rust
 
@@ -154,3 +158,4 @@ The following are some of the features that I cut off **_for now_**, due to the 
 ## Credits
 
 - [JanDeDobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh) for the amazing zsh-like integration for the powershell.
+- [Simple Icons](https://simpleicons.org/) for providing some base colors of a certain icons.

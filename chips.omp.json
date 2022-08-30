@@ -80,7 +80,7 @@
           "properties": {
             "url": "https://wakatime.com/api/v1/users/current/summaries?start=today&end=today&api_key={{ .Env.WAKATIME_API_KEY }}",
             "http_timeout": 2000,
-            "cache_timeout": 1
+            "cache_timeout": 5
           },
           "style": "diamond",
           "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.SEGMENT_DISABLE_WAKATIME))) (gt (.CummulativeTotal.Seconds | toDecimal) 0) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
