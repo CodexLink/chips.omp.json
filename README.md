@@ -91,7 +91,7 @@ _Please note that this is also possible when modifying `$PROFILE`. Just reload t
 
 Also note that I adlib this demonstration, more information and other hideable segments in the [Environment Variables section](#environment-variables).
 
-[![chips.omp.json on-the-spot env. change](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_on_the_spot_env_change.png)](https://ohmyposh.dev/docs/themes#chips)
+[![chips.omp.json on-the-spot env. change](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_on_the_spot_env_change.gif)](https://ohmyposh.dev/docs/themes#chips)
 
 ### Transient Prompt with Insights of Previous Command
 
@@ -158,3 +158,4 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
 - [JanDeDobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh) for the amazing zsh-like integration for the powershell.
 - [Simple Icons](https://simpleicons.org/) for providing some base colors of a certain icons.
+- [Sprig](https://masterminds.github.io/sprig/) for the straightforward documentation without making me going insane.
