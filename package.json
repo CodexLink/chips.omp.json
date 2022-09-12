@@ -1,6 +1,6 @@
 {
   "name": "chips.omp.json",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Non-Standard Compliant Material Design-Inspired Chips Theme for Oh-My-Posh Theme.",
   "scripts": {
     "copy-local": "pwsh -NoProfile -Command Copy-Item -Destination \"./\" -Path \"~/chips.omp.json\" -Confirm",
