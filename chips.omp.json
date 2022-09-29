@@ -114,7 +114,7 @@
             "{{ if and (gt .Percentage 46) (lt .Percentage 55) }}p:c-battery-55-less{{ end }}",
             "{{ if and (gt .Percentage 56) (lt .Percentage 70) }}p:c-battery-70-less{{ end }}",
             "{{ if and (gt .Percentage 71) (lt .Percentage 90) }}p:c-battery-90-less{{ end }}",
-            "{{ if and (gt .Percentage 91) (lt .Percentage 100) }}p:c-battery-90-less{{ end }}"
+            "{{ if and (gt .Percentage 91) (le .Percentage 100) }}p:c-battery-100-less{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
