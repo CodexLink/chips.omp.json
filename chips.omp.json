@@ -119,7 +119,7 @@
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
           "style": "diamond",
-          "template": "{{ if eq \"True\" (title (default \"False\" .Env.DISABLE_SEGMENT_BATTERY)) }}{{ else }}{{ if not .Error }}{{ if eq \"Charging\" .State.String }}\uE315 {{ else if eq \"Discharging\" .State.String }}\uF062 {{ else if eq \"Full\" .State.String }}~ {{ else }}? {{ end }}{{ if lt .Percentage 15 }}\uF579{{ else if and (gt .Percentage 16) (lt .Percentage 30) }}\uF57A{{ else if and (gt .Percentage 31) (lt .Percentage 45) }}\uF57C{{ else if and (gt .Percentage 46) (lt .Percentage 55)}}\uF57D{{ else if and (gt .Percentage 56) (lt .Percentage 70) }}\uF57E{{ else if and (gt .Percentage 71) (lt .Percentage 90) }}\uF580{{ else }}\uF581{{ end }} {{ .Percentage }}%{{ else }}!{{ end }}{{ end }}",
+          "template": "{{ if eq \"True\" (title (default \"False\" .Env.DISABLE_SEGMENT_BATTERY)) }}{{ else }}{{ if not .Error }}{{ if eq \"Charging\" .State.String }}\uE315 {{ else if eq \"Discharging\" .State.String }}\uF062 {{ else if eq \"Full\" .State.String }}~ {{ else }}? {{ end }}{{ if le .Percentage 15 }}\uF579{{ else if and (ge .Percentage 16) (le .Percentage 30) }}\uF57A{{ else if and (ge .Percentage 31) (le .Percentage 45) }}\uF57C{{ else if and (ge .Percentage 46) (le .Percentage 55)}}\uF57D{{ else if and (ge .Percentage 56) (le .Percentage 70) }}\uF57E{{ else if and (ge .Percentage 71) (le .Percentage 80) }}\uF580{{ else if and (ge .Percentage 81) (le .Percentage 95) }}\uF581{{ else }}\uF578{{ end }} {{ .Percentage }}%{{ else }}!{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4",
           "type": "battery"
         }
