@@ -135,6 +135,10 @@ More pictures will be added soon, as if I can remember it.
 
 [![chips.omp.json, more sample, convoluted display console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_convoluted_console_display_state.png)](https://ohmyposh.dev/docs/themes#chips)
 
+### Git: Disconnected/unrecognized/no-remote branch status display
+
+[![chips.omp.json, more sample, git unrecognized branch console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_git_unrecognized_branch.png)](https://ohmyposh.dev/docs/themes#chips)
+
 ## TODO Features
 
 The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
