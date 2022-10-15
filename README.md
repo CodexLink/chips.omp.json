@@ -8,6 +8,10 @@ The `passively-active, with cutting edge release` development repository for the
 
 _Designed to be compatible for translucent, dark-and-white influenced background prompts. Based on Material Design Components: Chips, which allows for displayed data to be displayed elegantly. And also, Material Colors were applied varying from A100 to A400 Color Palettes. **More examples below.**_
 
+# Notice
+
+- Version update to `oh-my-posh` repository will be updated once I finished the list from the TODO features. (Which is expected to be somewhere on the 4th week).
+
 ## Features
 
 - Color-Adjustable Segments with Palettes
@@ -101,6 +105,36 @@ Also note that I adlib this demonstration, more information and other hideable s
 
 </div>
 
+## More Samples: Uncategorized
+
+This section contains slightly out-of-context images of the prompt. This may specifically highlights how it looks like after some work done.
+
+More pictures will be added soon, as if I can remember it.
+
+### Time Execution as Spent on `nvim`
+
+[![chips.omp.json, more sample, transient + console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_transient_plus_console_state.png)](https://ohmyposh.dev/docs/themes#chips)
+
+### After pushing something in `git`
+
+[![chips.omp.json, more sample, git push console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_git_push_console_state.png)](https://ohmyposh.dev/docs/themes#chips)
+
+> Bug notice: The 100% battery bar display is already fixed.
+
+### Extra-complicated git status
+
+[![chips.omp.json, more sample, git complicated display console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_git_console_merge_conflict_console_state.png)](https://ohmyposh.dev/docs/themes#chips)
+
+> Context: I was having a hard time with my PR getting conflict to another branch.
+
+### Bare-minimum console display
+
+[![chips.omp.json, more sample, bare-minimum display console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_bare_minimum_console_display_state.png)](https://ohmyposh.dev/docs/themes#chips)
+
+### Convoluted, overdetailed console display
+
+[![chips.omp.json, more sample, convoluted display console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_convoluted_console_display_state.png)](https://ohmyposh.dev/docs/themes#chips)
+
 ## TODO Features
 
 The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
@@ -108,7 +142,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
 1. Other Programming Language Project Segment
    - [ ] Crystal
    - [ ] Flutter
-   - [ ] Lua (_Next, currently figuring it how to detect the executable._)
+   - [ ] Lua
    - [x] Node
    - [ ] Rust
 
