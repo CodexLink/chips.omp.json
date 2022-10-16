@@ -149,8 +149,21 @@
           "type": "text"
         },
         {
+          "background": "blue",
           "background_templates": [
-            "{{ if empty .Full }}p:c-project-node-error{{ else }}p:c-project-node{{ end }}"
+            "{{ if .Error }}p:c-project-generic-error{{ else }}p:c-project-lua{{ end }}"
+          ],
+          "display_mode": "files",
+          "foreground": "p:c-badge-text",
+          "leading_diamond": "\uE0B6",
+          "style": "diamond",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_LUA)) }}\uE620 {{ if or (.Error) (empty .Full) }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "lua"
+        },
+        {
+          "background_templates": [
+            "{{ if empty .Full }}p:c-project-generic-error{{ else }}p:c-project-node{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
@@ -221,9 +234,10 @@
     "c-git-staging-working": "#FFB2FF",
     "c-git-upstream-gone": "#FF867F",
     "c-git-working": "#84FFFF",
+    "c-project-generic-error": "#FF867F",
     "c-project-node": "#9CFF57",
-    "c-project-node-error": "#FF867F",
     "c-project-python": "#FFE873",
+    "c-project-lua": "#BBC2FF",
     "c-secondary-ellipsis": "#FFFF8D",
     "c-shell-state-ssh-active": "#BAFFFF",
     "c-shell-state-root-active": "#9FFFE0",
