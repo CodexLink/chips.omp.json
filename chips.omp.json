@@ -5,8 +5,12 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "p:c-badge-folder",
-          "foreground": "p:c-badge-text",
+          "background_templates": [
+            "{{ if not (empty .Env.OVERRIDE_FOLDER_BADGE_BG) }}{{ .Env.OVERRIDE_FOLDER_BADGE_BG }}{{ else }}p:c-badge-folder{{ end }}"
+          ],
+          "foreground_templates": [
+            "{{ if not (empty .Env.OVERRIDE_FOLDER_BADGE_FG) }}{{ .Env.OVERRIDE_FOLDER_BADGE_FG }}{{ else }}p:c-badge-text{{ end }}"
+          ],
           "leading_diamond": "\uE0B6",
           "properties": {
             "style": "folder"
