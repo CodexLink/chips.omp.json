@@ -36,6 +36,7 @@ The theme is designed to be **flexible** as possible by providing users a choice
 
 | Env. Var. (Append `DISABLE_SEGMENT` with prefixes `_`) | Type   | Default Value                              | Functionality (Description)                                                                                                                                                                                                                                                                                                                    |
 | ------------------------------------------------------ | ------ | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ENABLE_ARROW**<br>\_DIVIDER_COLOR_EXECUTION_RETURN   | bool   | **False** _($false)_                       | Allow for the execution return state color to paint the arrow near the input buffer as an additional indication aside from the transient prompt state. See [more samples](#more-samples%3A-uncategorized) for the context.                                                                                                                     |
 | \_BATTERY                                              | bool   | **False** _($false)_                       | Hides the `BATTERY` segment found on the top-right of the prompt when value is set to **True** (_$true_).                                                                                                                                                                                                                                      |
 | \_DTIME                                                | bool   | **False** _($false)_                       | Hides the `DTIME` segment found on the top-right of the prompt when the value is set to **True** (_$true_).                                                                                                                                                                                                                                    |
 | \_PROJECT_LUA                                          | bool   | **False** _($false)_                       | Hides the `LUA` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_).                                                                                                                                                                                                           |
@@ -142,6 +143,10 @@ More pictures will be added soon, as if I can remember it.
 
 [![chips.omp.json, more sample, git unrecognized branch console state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_git_unrecognized_branch.png)](https://ohmyposh.dev/docs/themes#chips)
 
+### Arrow Near Input Buffer, Inherit Execution Return Color as Additional Indicator
+
+[![chips.omp.json, more sample, arrow input buffer inherit execution color state](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/misc_arrow_input_buffer_change_color_with_execution_state.gif)](https://ohmyposh.dev/docs/themes#chips)
+
 ## TODO Features
 
 The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
@@ -149,7 +154,7 @@ The following are some of the features that I cut off **_for now_**, due to the 
 1. Other Programming Language Project Segment
    - [ ] Crystal
    - [ ] Flutter
-   - [ ] Lua
+   - [x] Lua
    - [x] Node
    - [ ] Rust
 

@@ -196,7 +196,9 @@
         },
         {
           "style": "plain",
-          "foreground": "p:c-badge-white",
+          "foreground_templates": [
+            "{{ if eq \"False\" (title (default \"False\" .Env.ENABLE_ARROW_DIVIDER_COLOR_EXECUTION_RETURN)) }}p:c-badge-white{{ else }}{{ if eq .Code 0 }}p:c-badge-return-success{{ else if or (eq .Code 1) (eq .Code 130) }}p:c-badge-return-fail-term{{ else }}p:c-badge-return-custom{{ end }}{{ end }}"
+          ],
           "template": "\u276F",
           "type": "text"
         }
