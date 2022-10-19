@@ -177,7 +177,7 @@
             "fetch_package_manager": true
           },
           "style": "diamond",
-          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}\uE718 {{ if not (empty .Full) }}{{ .Full }}{{ else }}No Version{{ if .Error }}({{ .Error }}){{ end }}{{ end }}{{ end }}",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}\uE718 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "node"
         },
