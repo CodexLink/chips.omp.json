@@ -39,6 +39,7 @@ The theme is designed to be **flexible** as possible by providing users a choice
 | **ENABLE_ARROW**<br>\_DIVIDER_COLOR_EXECUTION_RETURN   | bool   | **False** _($false)_                       | Allow for the execution return state color to paint the arrow near the input buffer as an additional indication aside from the transient prompt state. See [more samples](#more-samples%3A-uncategorized) for the context.                                                                                                                     |
 | \_BATTERY                                              | bool   | **False** _($false)_                       | Hides the `BATTERY` segment found on the top-right of the prompt when value is set to **True** (_$true_).                                                                                                                                                                                                                                      |
 | \_DTIME                                                | bool   | **False** _($false)_                       | Hides the `DTIME` segment found on the top-right of the prompt when the value is set to **True** (_$true_).                                                                                                                                                                                                                                    |
+| \_PROJECT_CRYSTAL                                      | bool   | **False** _($false)_                       | Hides the `CRYSTAL` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_).                                                                                                                                                                                                       |
 | \_PROJECT_LUA                                          | bool   | **False** _($false)_                       | Hides the `LUA` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_).                                                                                                                                                                                                           |
 | \_PROJECT_NODE                                         | bool   | **False** _($false)_                       | Hides the `NODE` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_).                                                                                                                                                                                                          |
 | \_PROJECT_RUST                                         | bool   | **False** _($false)_                       | Hides the `RUST` segment found on the bottom-left prompt along with the **input buffer** when the value is set to **True** (_$true_).                                                                                                                                                                                                          |
@@ -153,11 +154,11 @@ More pictures will be added soon, as if I can remember it.
 The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
 
 1. Other Programming Language Project Segment
-   - [ ] Crystal
+   - [x] Crystal
    - [ ] Flutter
    - [x] Lua
    - [x] Node
-   - [ ] Rust
+   - [x] Rust
 
 > Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
 

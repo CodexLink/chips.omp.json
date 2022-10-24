@@ -154,6 +154,17 @@
         },
         {
           "background_templates": [
+            "{{ if empty .Full }}p:c-project-generic-error{{ else }}p:c-project-crystal{{ end }}"
+          ],
+          "foreground": "p:c-badge-text",
+          "leading_diamond": "\uE0B6",
+          "style": "diamond",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_CRYSTAL)) }}\uE62F {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "crystal"
+        },
+        {
+          "background_templates": [
             "{{ if .Error }}p:c-project-generic-error{{ else }}p:c-project-lua{{ end }}"
           ],
           "foreground": "p:c-badge-text",
@@ -245,6 +256,7 @@
     "c-git-upstream-gone": "#FF867F",
     "c-git-working": "#84FFFF",
     "c-project-generic-error": "#FF867F",
+    "c-project-crystal": "#FFFFFF",
     "c-project-node": "#9CFF57",
     "c-project-rust": "#FFAB40",
     "c-project-python": "#FFE873",
