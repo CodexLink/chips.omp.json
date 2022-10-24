@@ -152,14 +152,7 @@ More pictures will be added soon, as if I can remember it.
 
 ## TODO Features
 
-The following are some of the features that I cut off **_for now_**, due to the following: I'm not using it, no other ways for me to test it or install it.
-
-1. Other Programming Language Project Segment
-   - [x] Crystal
-   - [ ] Flutter
-   - [x] Lua
-   - [x] Node
-   - [x] Rust
+_None as of now._ Have something to suggest? Let me know through issue! (And also by tagging me to the context as well~)
 
 > Note that, if you are going to suggest soemthing that is out of this list, you have to make sure that the language is supported from one of the segments offered in **Oh-My-Posh Segment Section**. Otherwise, request a segment feature from the maintainer and let me know if you want to have it included, **once implemented**.
 
@@ -198,10 +191,11 @@ The following are some of the features that I cut off **_for now_**, due to the 
 
 - [Material Design's Color Tool](https://material.io/resources/color/) — Create, share, and apply color palettes to your UI, as well as measure the accessibility level of any color combination.
 - [regular expressions 101](https://regex101.com/) — Just a regex validator.
+- [Simple Icons](https://simpleicons.org/) — Used 1or icon and color brand references.
 
 ## Contribution
 
-- TODO. — _More information coming soon. Have to construct the template._
+— I don't have plans for the formal contribution, but contributions of any forms are welcomed. We know its typical to create issue for discussion before PR.
 
 ## Credits
 
