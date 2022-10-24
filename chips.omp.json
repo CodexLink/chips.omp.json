@@ -153,7 +153,6 @@
           "type": "text"
         },
         {
-          "background": "blue",
           "background_templates": [
             "{{ if .Error }}p:c-project-generic-error{{ else }}p:c-project-lua{{ end }}"
           ],
