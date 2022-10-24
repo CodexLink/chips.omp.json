@@ -171,15 +171,25 @@
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
-          "powerline_symbol": "\uE0B0",
           "properties": {
             "disply_mode": "files",
             "fetch_package_manager": true
           },
           "style": "diamond",
-          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}\uE718 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}\uE718 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "node"
+        },
+        {
+          "background_templates": [
+            "{{ if empty .Full }}p:c-project-generic-error{{ else }}p:c-project-rust{{ end }}"
+          ],
+          "foreground": "p:c-badge-text",
+          "leading_diamond": "\uE0B6",
+          "style": "diamond",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_RUST)) }}\uE7A8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "rust"
         },
         {
           "background": "p:c-project-python",
@@ -242,6 +252,7 @@
     "c-git-working": "#84FFFF",
     "c-project-generic-error": "#FF867F",
     "c-project-node": "#9CFF57",
+    "c-project-rust": "#FFAB40",
     "c-project-python": "#FFE873",
     "c-project-lua": "#BBC2FF",
     "c-secondary-ellipsis": "#FFFF8D",
