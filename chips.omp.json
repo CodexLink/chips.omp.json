@@ -157,7 +157,6 @@
           "background_templates": [
             "{{ if .Error }}p:c-project-generic-error{{ else }}p:c-project-lua{{ end }}"
           ],
-          "display_mode": "files",
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
           "style": "diamond",
@@ -171,10 +170,6 @@
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
-          "properties": {
-            "disply_mode": "files",
-            "fetch_package_manager": true
-          },
           "style": "diamond",
           "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}\uE718 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
           "trailing_diamond": "\uE0B4 ",
@@ -196,8 +191,7 @@
           "leading_diamond": "\uE0B6",
           "foreground": "p:c-badge-text",
           "properties": {
-            "display_mode": "context",
-            "fetch_virtual_env": true
+            "display_mode": "context"
           },
           "style": "diamond",
           "template": "{{ if or (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_PYTHON))) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_PYTHON_VENV))) }}\uE235 {{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_PYTHON)) }}{{ .Full }}{{ end }}{{ if and (.Venv) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_PYTHON))) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_PYTHON_VENV))) }} \uE621 {{ end }}{{ if and (.Venv) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_PYTHON_VENV))) }}{{ if .Env.SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR }}{{ .Env.SEGMENT_PROJECT_PYTHON_ACTIVE_VENV_STR }}{{ else }}{{ .Venv }}{{ end }}{{ end }}{{ end }}",
