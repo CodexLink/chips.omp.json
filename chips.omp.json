@@ -186,8 +186,9 @@
           "type": "rust"
         },
         {
-          "background": "p:c-project-python",
-          "leading_diamond": "\uE0B6",
+          "background_templates": [
+            "{{ if empty .Full }}p:c-project-generic-error{{ else }}p:c-project-python{{ end }}"
+          ],
           "foreground": "p:c-badge-text",
           "properties": {
             "display_mode": "context"
