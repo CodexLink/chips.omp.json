@@ -165,6 +165,17 @@
         },
         {
           "background_templates": [
+            "{{ if empty .Full }}p:c-project-generic-error{{ else }}p:c-project-flutter{{ end }}"
+          ],
+          "foreground": "p:c-badge-text",
+          "leading_diamond": "\uE0B6",
+          "style": "diamond",
+          "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_FLUTTER)) }}Flutter | {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
+          "trailing_diamond": "\uE0B4 ",
+          "type": "dart"
+        },
+        {
+          "background_templates": [
             "{{ if .Error }}p:c-project-generic-error{{ else }}p:c-project-lua{{ end }}"
           ],
           "foreground": "p:c-badge-text",
@@ -257,10 +268,11 @@
     "c-git-working": "#84FFFF",
     "c-project-generic-error": "#FF867F",
     "c-project-crystal": "#FFFFFF",
+    "c-project-flutter": "#6DC2FF",
+    "c-project-lua": "#BBC2FF",
     "c-project-node": "#9CFF57",
     "c-project-rust": "#FFAB40",
     "c-project-python": "#FFE873",
-    "c-project-lua": "#BBC2FF",
     "c-secondary-ellipsis": "#FFFF8D",
     "c-shell-state-ssh-active": "#BAFFFF",
     "c-shell-state-root-active": "#9FFFE0",
