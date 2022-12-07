@@ -112,13 +112,13 @@
         {
           "background_templates": [
             "{{ if .Error }}p:c-battery-state-error{{ end }}",
-            "{{ if lt .Percentage 15 }}p:c-battery-15-less{{ end }}",
-            "{{ if and (gt .Percentage 16) (lt .Percentage 30) }}p:c-battery-30-less{{ end }}",
-            "{{ if and (gt .Percentage 31) (lt .Percentage 45) }}p:c-battery-45-less{{ end }}",
-            "{{ if and (gt .Percentage 46) (lt .Percentage 55) }}p:c-battery-55-less{{ end }}",
-            "{{ if and (gt .Percentage 56) (lt .Percentage 70) }}p:c-battery-70-less{{ end }}",
-            "{{ if and (gt .Percentage 71) (lt .Percentage 90) }}p:c-battery-90-less{{ end }}",
-            "{{ if and (gt .Percentage 91) (le .Percentage 100) }}p:c-battery-100-less{{ end }}"
+            "{{ if le .Percentage 15 }}p:c-battery-15-less{{ end }}",
+            "{{ if and (ge .Percentage 16) (le .Percentage 30) }}p:c-battery-30-less{{ end }}",
+            "{{ if and (ge .Percentage 31) (le .Percentage 45) }}p:c-battery-45-less{{ end }}",
+            "{{ if and (ge .Percentage 46) (le .Percentage 55) }}p:c-battery-55-less{{ end }}",
+            "{{ if and (ge .Percentage 56) (le .Percentage 70) }}p:c-battery-70-less{{ end }}",
+            "{{ if and (ge .Percentage 71) (le .Percentage 90) }}p:c-battery-90-less{{ end }}",
+            "{{ if and (ge .Percentage 91) (le .Percentage 100) }}p:c-battery-100-less{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
