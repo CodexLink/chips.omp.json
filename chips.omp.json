@@ -58,7 +58,7 @@
             "{{ if lt .Ms 60000 }}p:c-exec-fast{{ end }}",
             "{{ if lt .Ms 3600000 }}p:c-exec-normal{{ end }}",
             "{{ if lt .Ms 10800000 }}p:c-exec-slow{{ end }}",
-            "{{ if gt .Ms 10800001 }}p:c-exec-slower{{ end }}"
+            "{{ if ge .Ms 10800000 }}p:c-exec-slower{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
@@ -77,7 +77,7 @@
             "{{ if lt (.CummulativeTotal.Seconds | int64) 10800 }}p:c-wakatime-warm-up{{ end }}",
             "{{ if lt (.CummulativeTotal.Seconds | int64) 25200 }}p:c-wakatime-working{{ end }}",
             "{{ if lt (.CummulativeTotal.Seconds | int64) 28000 }}p:c-wakatime-quota{{ end }}",
-            "{{ if gt (.CummulativeTotal.Seconds | int64) 28801 }}p:c-wakatime-overtime{{ end }}"
+            "{{ if ge (.CummulativeTotal.Seconds | int64) 28800 }}p:c-wakatime-overtime{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
