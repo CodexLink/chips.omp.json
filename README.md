@@ -6,11 +6,14 @@ The `passively-active, with cutting edge release` development repository for the
 [![chips.omp.json highlight #2](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_2.png)](https://ohmyposh.dev/docs/themes#chips)
 [![chips.omp.json highlight #3](https://github.com/CodexLink/chips.omp.json/blob/latest/assets/highlight_3.png)](https://ohmyposh.dev/docs/themes#chips)
 
-_Designed to be compatible for translucent, dark-and-white influenced background prompts. Based on Material Design Components: Chips, which allows for displayed data to be displayed elegantly. And also, Material Colors were applied varying from A100 to A400 Color Palettes. **More examples below.**_
+_Designed to be compatible for translucent, dark-and-white-influenced background prompts with **monospaced style and downscaled (nerd) icon fonts**._
+
+Based on Material Design Components: Chips, which allows for data to be displayed elegantly by separating them by chips. Color paletted is based on Material Colors varying from A100 to A400 Color Palettes. **More examples below.**
 
 # Notice
 
-- Version update to `oh-my-posh` repository will be updated once I finished the list from the TODO features. (Which is expected to be somewhere on the 4th week).
+- Version update to `oh-my-posh` repository depends from the amount of changes done and how impact it was to the point of needing to upstream it to the `oh-my-posh` repository.
+- The description for this theme that bound to be served better with monospaced font has been an issue, **please see FAQ #8.**
 
 ## Features
 
@@ -170,22 +173,28 @@ _None as of now._ Have something to suggest? Let me know through issue! (And als
 
    > If you are using _**Wakatime**_, you have to keep note that the cache time is set to `5m` or 5 minutes by default. Therefore, every 5 minutes, the prompt will do an HTTP request to get the latest upstream of your stats. If you are not using Wakatime and this issue occurs, please investigate the state of the prompt by **debugging** it (_with the use of _ `oh-my-posh debug`). Please let me know with sufficient information if it persists.
 
-4. Why did you not use `posh-git`? You know that `git` segment is slower right?
+4. Why did you not use `posh-git`? `git` segment is slower right?
 
    > I'm aware. oh-my-posh `posh-git` docs doesn't show any examples or further modification than what is being provided in the `git` segment. While I do understand the compromise of performance over customization, I think its best to customize the output to further understand more about what are the symbols behind them. Because in my perspective, I'm pretty much confused about it. To solve the contention from this issue, I'm hoping that `posh-git` is customizable as `git` segment.
-
-5. When I disabled the "wakatime" segment, why it's still slow?
-
-   > As of now (08/26/2022), there is no switch for the HTTP query to be disabled when a certain environment variable invalidates truthy condition. I suggest trying to nullify the value of your 'WAKATIME_API_KEY' and see if it works or ignores calling HTTP request.
 
 6. What are your basis for the wakatime's timeout values?
 
    > They were based on my preference with consideration on my ISP speed. Please adjust them from the theme itself. Environment Variables for adjusting parameters such as timeouts were not supported as of 08/29/2022. **_Let me know if it is because I also need it._**
 
 7. Why does the `Code Return` sometimes returns high value of `signed int` or just big numbers?
-   > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **asumption** but its something related to that.
+   > I'm not quite sure why, but usually when a program has crashed, they will return a reference code or sometimes address that points to the point of error. Though this was just an **assumption** but its something related to that.
 
-> Was your question does not relate to what I put here? Let me know in the **Issue** section.
+8. Why this theme is only designed for monospaced and consistently-single-width?
+    > If you have seen the snapshot from the `oh-my-posh` website, as well as from the [issue](https://github.com/CodexLink/dotfiles-configs-archive/issues/4), the theme looks ugly as heck to the point where the used icons are cherry-picked to display properly when the font has a small-scaled nerd icon font.
+    
+    > Some similar icons have lower or higher scale, which is the exact reason why some icons are picked, and not first candidates were used for designing the theme.
+    
+    > Other than that, the spacing added in the theme feels lacking or non-existent if the user is using a font that has a default-scaling of nerd font icons, looking like there's no spacing when in fact, there's a spacing between the string and the icon from the first place.
+    
+    >**Either way, I'm actively open to create a solution for users having this kind of issue and is open for creating an alternative theme.**
+
+
+> Further more questions? Let me know in the **Issue** section.
 
 ## Tools
 
