@@ -73,11 +73,11 @@
         },
         {
           "background_templates": [
-            "{{ if lt (.CummulativeTotal.Seconds | int64) 3600 }}p:c-wakatime-undertime{{ end }}",
-            "{{ if lt (.CummulativeTotal.Seconds | int64) 10800 }}p:c-wakatime-warm-up{{ end }}",
-            "{{ if lt (.CummulativeTotal.Seconds | int64) 25200 }}p:c-wakatime-working{{ end }}",
-            "{{ if lt (.CummulativeTotal.Seconds | int64) 28000 }}p:c-wakatime-quota{{ end }}",
-            "{{ if ge (.CummulativeTotal.Seconds | int64) 28800 }}p:c-wakatime-overtime{{ end }}"
+            "{{ if lt .CumulativeTotal.Seconds 3600 }}p:c-wakatime-undertime{{ end }}",
+            "{{ if lt .CumulativeTotal.Seconds 10800 }}p:c-wakatime-warm-up{{ end }}",
+            "{{ if lt .CumulativeTotal.Seconds 25200 }}p:c-wakatime-working{{ end }}",
+            "{{ if lt .CumulativeTotal.Seconds 28000 }}p:c-wakatime-quota{{ end }}",
+            "{{ if ge .CumulativeTotal.Seconds 28800 }}p:c-wakatime-overtime{{ end }}"
           ],
           "foreground": "p:c-badge-text",
           "leading_diamond": "\uE0B6",
@@ -87,7 +87,7 @@
             "cache_timeout": 5
           },
           "style": "diamond",
-          "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_WAKATIME))) (gt (.CummulativeTotal.Seconds | int64) 0) }}\uFA19 {{ secondsRound .CummulativeTotal.Seconds }}.{{ end }}",
+          "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_WAKATIME))) (gt .CumulativeTotal.Seconds 0) }}\uFA19 {{ secondsRound .CumulativeTotal.Seconds }}.{{ end }}",
           "trailing_diamond": "\uE0B4 ",
           "type": "wakatime"
         },
