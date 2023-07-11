@@ -14,6 +14,7 @@
           "leading_diamond": "\uE0B6",
           "properties": {
             "style": "agnoster_short",
+            "folder_separator_icon": "/",
             "hide_root_location": true,
             "max_depth": 2
           },
