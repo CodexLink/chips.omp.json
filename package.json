@@ -4,7 +4,7 @@
   "description": "Non-Standard Compliant Material Design-Inspired Chips Theme for Oh-My-Posh Theme.",
   "scripts": {
     "copy-local": "pwsh -NoProfile -Command Copy-Item -Destination \"./\" -Path \"~/chips.omp.json\" -Confirm",
-    "copy-local-double-width": "pwsh -NoProfile -Command Copy-Item -Destination \"./\" -Path \"~/chips-double-width.omp.json\" -Confirm",
+    "copy-local-double-width": "pwsh -NoProfile -Command Copy-Item -Destination \"./chips-double-width.omp.json\" -Path \"~/chips.omp.json\" -Confirm",
     "copy-git": "pwsh -NoProfile -Command Copy-Item -Destination \"~/\" -Path \"chips.omp.json\"  -Confirm",
     "copy-git-double-width": "pwsh -NoProfile -Command Copy-Item -Destination \"~/chips.omp.json\" -Path \"chips-double-width.omp.json\"  -Confirm",
     "snapshot-local-ref": "pwsh -Command Write-Host \"oh-my-posh config export image --author 'CodexLink, More Samples at https://github.com/CodexLink/chips.omp.json' --config ~/chips.omp.json --cursor-padding 20 --rprompt-offset 20 --output highlight.png\"",
