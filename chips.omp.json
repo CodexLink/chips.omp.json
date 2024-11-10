@@ -85,8 +85,8 @@
         },
         {
           "properties": {
-            "branch_ahead_icon": " \ue621 \uf9ac ",
-            "branch_behind_icon": " \ue621 \uf9ad ",
+            "branch_ahead_icon": " \ue621 \udb81\udcad ",
+            "branch_behind_icon": " \ue621 \udb81\udcae ",
             "branch_gone_icon": " \ue621 \uf00d",
             "branch_icon": "\ue0a0 ",
             "branch_identical_icon": " \ue621 \uf00c",
