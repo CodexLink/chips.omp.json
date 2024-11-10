@@ -96,7 +96,7 @@
           },
           "leading_diamond": " \ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "{{ if (empty (.Ref)) }}invalid-git-dir{{ else }}{{ .HEAD }}{{ end }}{{ .BranchStatus }}{{ if .Working.Changed }} \ue0b1 \uf448  ({{ .Working.String }}){{ end }}{{ if and .Working.Changed .Staging.Changed }} \ue621 {{ end }}{{ if .Staging.Changed }}{{ if not .Working.Changed }} \ue0b1 {{ end }}\uf854 ({{ .Staging.String }}){{ end }}{{ if .StashCount }} \ue621 \uf6fc {{ .StashCount }} Stash{{ if gt .StashCount 1 }}es{{ end }}{{ end }}",
+          "template": "{{ if (empty (.Ref)) }}invalid-git-dir{{ else }}{{ .HEAD }}{{ end }}{{ .BranchStatus }}{{ if .Working.Changed }} \ue0b1 \uf448  ({{ .Working.String }}){{ end }}{{ if and .Working.Changed .Staging.Changed }} \ue621 {{ end }}{{ if .Staging.Changed }}{{ if not .Working.Changed }} \ue0b1 {{ end }}\udb80\udf55 ({{ .Staging.String }}){{ end }}{{ if .StashCount }} \ue621 \udb80\uddfd {{ .StashCount }} Stash{{ if gt .StashCount 1 }}es{{ end }}{{ end }}",
           "foreground": "p:c-badge-text",
           "background": "p:c-git-normal",
           "type": "git",
@@ -141,6 +141,13 @@
           "trailing_diamond": "\ue0b4 ",
           "template": "{{ if and (.Env.WAKATIME_API_KEY) (eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_WAKATIME))) (gt .CumulativeTotal.Seconds 0) }}\ufa19 {{ secondsRound .CumulativeTotal.Seconds }}.{{ end }}",
           "foreground": "p:c-badge-text",
+          "cache": {
+            "duration": "5m0s",
+            "strategy": "session"
+          },
+          "properties": {
+            "http_timeout": 500
+          },
           "type": "wakatime",
           "style": "diamond",
           "background_templates": [
